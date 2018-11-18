@@ -8,7 +8,22 @@
             aria-expanded="false" aria-label="Toggle navigation"></button>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                
+                <div class="dropdown nav-item">
+                    <?php if ($route->File == 'sobre' || $route->File == 'termos' || $route->File == 'privacidade') { ?>
+                        <span style="cursor: pointer" class="nav-link active text-white">
+                            Sobre
+                        </span> 
+                    <?php } else { ?>
+                        <span style="cursor: pointer" class="nav-link">
+                            Sobre
+                        </span> 
+                    <?php } ?>
+                    <div class="dropdown-content text-center p-1">
+                        <a class="dropdown-item" href="sobre">Sobre o Search Food</a>
+                        <a class="dropdown-item" href="termos">Termos de Uso</a>
+                        <a class="dropdown-item" href="privacidade">Privacidade</a>
+                    </div>
+                </div>
             </ul>
         </div>
     <?php } else { ?>
@@ -20,7 +35,21 @@
             aria-expanded="false" aria-label="Toggle navigation"></button>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                
+                <div class="dropdown nav-item">
+                    <?php if ($route->File == 'sobre' || $route->File == 'termos' || $route->File == 'privacidade') { ?>
+                        <span style="cursor: pointer" class="nav-link active text-white">
+                            Sobre
+                        </span> 
+                    <?php } else { ?>
+                        <span style="cursor: pointer" class="nav-link">
+                            Sobre
+                        </span> 
+                    <?php } ?>
+                    <div class="dropdown-content text-center p-1">
+                        <a class="dropdown-item" href="sobre">Sobre o Search Food</a>
+                        <a class="dropdown-item" href="termos">Termos de Uso</a>
+                        <a class="dropdown-item" href="privacidade">Privacidade</a>
+                    </div>
             </ul>
         </div>
     <?php } ?>
