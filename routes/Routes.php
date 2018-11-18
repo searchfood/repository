@@ -107,12 +107,6 @@ class Routes
                 $this->Link = null;
             }
             
-        }
-
-        if ($this->Local[0] == 'entrar') {
-            $this->File = 'user/entrar';
-            $this->Link = (isset($this->Local[0]) ? $this->Local : null);
-        }
-        
+        }        
     }
 }
