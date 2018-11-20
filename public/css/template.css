@@ -1,5 +1,9 @@
 .bg-template {background-color: #d20911}
 
+.form-template, .btn-template  {
+    border-radius: 2rem;
+}
+
 #logo-text {
     font-family: 'Copse', sans-serif;
     font-size: 30px;
@@ -13,7 +17,7 @@
 }
 
 .navbar-nav .nav-item .nav-link {
-    font-family: 'Niramit', sans-serif;
+    font-family: 'Nunito', sans-serif;
     color: white;
 }
 
@@ -41,7 +45,7 @@
 }
 
 .dropdown-content a {
-    font-family: 'Niramit', sans-serif;
+    font-family: 'Nunito', sans-serif;
     color: black;
     padding: 12px 16px;
     text-decoration: none;
