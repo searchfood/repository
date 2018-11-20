@@ -7,21 +7,26 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- Favicon -->
-        <link rel="shortcut icon" href="public/img/icon/SF.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="<?=URL?>/public/img/icon/SF.ico" type="image/x-icon">
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Copse" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Niramit" rel="stylesheet">
 
+        <!-- Fontawesome 5 -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
         <!-- CSS Template -->
-        <link rel="stylesheet" href="public/css/template.css">
+        <link rel="stylesheet" href="<?=URL?>/public/css/template.css">
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     </head>
     <body>
 
-        <?php include 'templates/navbar.php' ?>
+        <?php include 'app/Views/templates/navbar.php' ?>
+
+
         
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

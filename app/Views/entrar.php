@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="pt-BR">
     <head>
-        <title>Termos de Privacidade</title>
+        <title>Entrar ou Cadastrar</title>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
