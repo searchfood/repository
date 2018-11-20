@@ -26,18 +26,19 @@
         body{background:url('<?=URL?>/public/img/bg/bg-login.jpg')no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover}
         #right{float: right;}.card{border-radius: 0;height: 87.8vh;}#form-login{padding-top: 25px;}
     </style>
-    <body style="font-family: 'Niramit', sans-serif;">
+    <body style="font-family: 'Niramit', sans-serif;font-size: 17px">
 
         <?php include 'app/Views/templates/navbar.php' ?>
 
         <div id="right" class="col-4 p-0">
             <div class="card bg-light">
                 <div class="card-body">
-                    <h2 class="text-center pt-4">
-                        Acessar Painel
-                    </h2>
-                    <div class="text-center mt-4">
-                        <a href="cadastro">Cadastrar meu Restaurante</a>
+                    <h3 class="text-center pt-4 text-danger">
+                        <i class="fas fa-lock"></i>
+                        Esqueci minha Senha
+                    </h3>
+                    <div class="text-center mt-4 mx-4">
+                        <span>Informe seu email e aguarde o link para refazer sua senha</span>
                     </div>
                     <form action="" method="post" id="form-login" class="mx-4">
                         <div class="form-group">
@@ -45,22 +46,11 @@
                             <input type="email" name="email" id="email" class="form-control form-template" placeholder="Seu Email" aria-describedby="error_email">
                             <small style="float: right" id="error_email" class="text-danger"></small>
                         </div>
-                        <div class="form-group mb-4">
-                            <label for="password">Senha:</label>
-                            <input type="password" name="password" id="password" class="form-control form-template" placeholder="Sua Senha" aria-describedby="error_password">
-                            <small style="float: right" id="error_password" class="text-danger"></small>
-                        </div>
-                        <input type="hidden" name="action" value="logar">
+                        <input type="hidden" name="action" value="esqueci-senha">
                         <div class="form-group">
                             <button type="button" name="btn-login" id="btn-login" class="btn btn-primary btn-lg btn-block btn-template">
-                                Entrar
+                                Enviar
                             </button>
-                        </div>
-                        <div class="form-group text-center">
-                            <a class="text-danger" href="esqueci-senha">
-                                <i class="fas fa-lock"></i>
-                                Esqueci minha Senha
-                            </a>
                         </div>
                     </form>
                 </div>
