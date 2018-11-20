@@ -13,7 +13,7 @@
 }
 
 .navbar-nav .nav-item .nav-link {
-    font-family: 'Copse', sans-serif;
+    font-family: 'Niramit', sans-serif;
     color: white;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .navbar-nav .dropdown .nav-link:hover{
-    
+    color: #fff;
 }
 
 .dropdown {
@@ -41,7 +41,7 @@
 }
 
 .dropdown-content a {
-    font-family: 'Copse', sans-serif;
+    font-family: 'Niramit', sans-serif;
     color: black;
     padding: 12px 16px;
     text-decoration: none;

@@ -11,7 +11,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Copse" rel="stylesheet">
-        <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'> -->
+        <link href="https://fonts.googleapis.com/css?family=Niramit" rel="stylesheet">
 
         <!-- CSS Template -->
         <link rel="stylesheet" href="public/css/template.css">
