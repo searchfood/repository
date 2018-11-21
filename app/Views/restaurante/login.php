@@ -24,7 +24,7 @@
     </head>
     <style>
         body{background:url('<?=URL?>/public/img/bg/bg-login.jpg')no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover}
-        #right{float: right;}.card{border-radius: 0;height: 87.8vh;}#form-login{padding-top: 25px;}
+        #right{float: right;}.card{border-radius: 0;height: 87.8vh;}#form-login{padding-top: 25px;}.form-template, .btn-template{border-radius: 2rem;}
     </style>
     <body style="font-family: 'Niramit', sans-serif;">
 

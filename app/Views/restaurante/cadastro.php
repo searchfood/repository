@@ -24,7 +24,11 @@
     </head>
     <body style="font-family: 'Niramit', sans-serif;">
 
+        <!-- Navbar -->
         <?php include 'app/Views/templates/navbar.php' ?>
+        
+        <!-- Footer -->
+        <?php include 'app/Views/templates/footer.php' ?>
         
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

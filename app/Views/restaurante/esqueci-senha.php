@@ -24,7 +24,7 @@
     </head>
     <style>
         body{background:url('<?=URL?>/public/img/bg/bg-login.jpg')no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover}
-        #right{float: right;}.card{border-radius: 0;height: 87.8vh;}#form-login{padding-top: 25px;}
+        #right{float: right;}.card{border-radius: 0;height: 87.8vh;}#form-login{padding-top: 25px;}.form-template, .btn-template{border-radius: 2rem;}
     </style>
     <body style="font-family: 'Niramit', sans-serif;">
 
@@ -51,6 +51,12 @@
                             <button type="button" name="btn-login" id="btn-login" class="btn btn-primary btn-lg btn-block btn-template">
                                 Enviar
                             </button>
+                        </div>
+                        <div class="form-group text-center">
+                            <a class="text-primary" href="login">
+                                <i class="fas fa-reply"></i>
+                                Voltar
+                            </a>
                         </div>
                     </form>
                 </div>
