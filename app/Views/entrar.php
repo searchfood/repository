@@ -27,6 +27,8 @@
         <!-- Navbar -->
         <?php include 'app/Views/templates/navbar.php' ?>
         
+        
+
         <!-- Footer -->
         <?php include 'app/Views/templates/footer.php' ?>
         
