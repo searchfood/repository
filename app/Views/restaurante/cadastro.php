@@ -24,18 +24,19 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     </head>
     <style>
-        .container-fluid{background:url('<?=URL?>/public/img/bg/bg-cadastro.jpg')no-repeat center;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover}
+        .container-fluid{background:url('<?=URL?>/public/img/bg/bg-cadastro.jpg')no-repeat center;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover}.card {background: #fff;padding: 45px 0px;margin-top: -100px;z-index: 22;position: relative;border-radius: 20%;border: none;}
     </style>
     <body style="font-family: 'Niramit', sans-serif;">
 
         <!-- Navbar -->
         <?php include 'app/Views/templates/navbar.php' ?>
-        
-        <div class="container-fluid pt-3">
+        <div class="container-fluid px-0">
+        <div style="background: rgba(0,0,0,0.6)" class="container-fluid pt-3">
             <h1 class="text-center pt-5 text-white">                
                 Faça parte do Search Food e
                 <p>aumente <span id="writer"></span></p>                
             </h1>
+        </div>
         </div>
 
         <div class="container">
