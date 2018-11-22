@@ -5,21 +5,35 @@
         <span id="logo-text">Search Food</span>
     </span>
     <ul class="nav justify-content-center">
-        <h3 class="text-white">
+        <h4 class="text-white">
+            <i class="fas fa-home"></i>
             Nome do restaurante
-        </h3>
+        </h4>
     </ul>
     <ul class="nav justify-content-end">
+
         <?php include 'app/Views/templates/notification.php' ?>
-        
-        <span class="nav-item">
-            <button style="border: none" type="button" class="nav-link btn btn-link" data-toggle="modal" data-target="#logoutModal">
-                <span style="font-size: 18px" id="logout" class="mx-4">
-                    Sair
-                    <i class="fa fa-sign-out"></i>                
-                </span>
-            </button>
-        </span>
+
+        <div class="border ml-3"></div>
+        <div class="dropdown nav-item">
+            <span class="nav-link text-white">
+                <i class="fas fa-ban"></i>
+                Status da Conta
+            </span> 
+        </div>
+        <div class="border"></div>
+        <div class="dropdown nav-item">
+            <span style="cursor: pointer" class="nav-link text-white">
+                <i class="fas fa-user-alt"></i>
+                Nível: Usuário
+                <i class="fas fa-caret-down"></i>
+            </span> 
+            <div class="dropdown-content dropdown-menu-right text-center p-1">
+                <a class="dropdown-item" href="logout" data-toggle="modal" data-target="#logoutModal">
+                    Sair <i class="fas fa-sign-out-alt"></i> 
+                </a>
+            </div>
+        </div>                
     </ul>
 </nav>
 <nav class="navbar navbar-danger">
