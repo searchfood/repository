@@ -22,10 +22,37 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     </head>
+    <style>.card {-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.10);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.10);box-shadow: 0 1px 2px rgba(0,0,0,.10);border: 1px solid rgba(0,0,0,.2);border-radius: 0;color: black;}.card-header{font-size: 22px;}.card-footer{background-color: #fff;}</style>
     <body style="font-family: 'Niramit', sans-serif;background-color: #f1f2f7;">
 
         <?php include 'app/Views/templates/dashboard.php'?>
         
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-5 pr-0">
+                    <div class="card">
+                        <div class="card-header">
+                            Pedidos em Aberto   
+                            <h1 style="float: right;font-size: 20px;margin-bottom: 0" class="badge badge-success badge-pill">0</h1>                         
+                        </div>
+                        <div class="card-body">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            Detalhes do Pedido
+                        </div>
+                        <div class="card-body">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

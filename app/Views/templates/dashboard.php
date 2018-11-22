@@ -4,7 +4,7 @@
         <img height="55" src="<?=URL?>/public/img/logo/logo.png" alt="">
         <span id="logo-text">Search Food</span>
     </span>
-    <ul class="nav justify-content-center">
+    <ul style="padding-top: 10px" class="nav justify-content-center">
         <h4 class="text-white">
             <i class="fas fa-home"></i>
             Nome do restaurante
