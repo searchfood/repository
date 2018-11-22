@@ -35,8 +35,13 @@
                             Pedidos em Aberto   
                             <h1 style="float: right;font-size: 20px;margin-bottom: 0" class="badge badge-success badge-pill">0</h1>                         
                         </div>
-                        <div class="card-body">
-
+                        <div class="card-body p-0">
+                            <!-- <div class="list-group" id="myList" role="tablist">
+                                <a class="list-group-item list-group-item-action active" data-toggle="list" href="#home" role="tab">Home</a>
+                                <a class="list-group-item list-group-item-action" data-toggle="list" href="#profile" role="tab">Profile</a>
+                                <a class="list-group-item list-group-item-action" data-toggle="list" href="#messages" role="tab">Messages</a>
+                                <a class="list-group-item list-group-item-action" data-toggle="list" href="#settings" role="tab">Settings</a>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -46,7 +51,12 @@
                             Detalhes do Pedido
                         </div>
                         <div class="card-body">
-
+                            <!-- <div class="tab-content">
+                                <div class="tab-pane active" id="home" role="tabpanel">1</div>
+                                <div class="tab-pane" id="profile" role="tabpanel">2</div>
+                                <div class="tab-pane" id="messages" role="tabpanel">3</div>
+                                <div class="tab-pane" id="settings" role="tabpanel">4</div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
