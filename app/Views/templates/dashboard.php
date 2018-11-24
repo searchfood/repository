@@ -1,5 +1,5 @@
 <!--Estrutura do Template-->
-<nav class="navbar navbar-dark bg-dark">
+<nav id="navbar" class="navbar navbar-dark bg-dark">
     <span class="navbar-brand mb-0 h1 mr-0">
         <img height="55" src="<?=URL?>/public/img/logo/logo.png" alt="">
         <span id="logo-text">Search Food</span>
