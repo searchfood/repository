@@ -5,8 +5,8 @@
         <span id="logo-text">Search Food</span>
     </span>
     <ul style="padding-top: 10px" class="nav justify-content-center">
-        <h4 class="text-white">
-            <i class="fas fa-home"></i>
+        <h4 class="text-white">           
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHzSURBVEhL7ZU9SBxRFIU3whIViYhVinS2CwEbCUIqKxGrJGAX2EY0NhLQKlWwCqQREVFQsEhvpzZJIaRI0EJUkhCVJIVoLIzmz12/8+Y4uxOi+DMsCB443HvOve/dYee92UxFUSwWbxQKhUViamC/Q9jnEREwbrmeKth32iNKwJyHOylyCz729iXwAFnYkCLrvXUJmFVM/0RMGwMeEQGjPvLTBQ+ffEcY9134Bj8qWm9bf7H+bi3qVP0q08r/lukDuOIRETBGvFGTdbd1l3Wb9ZC0gNxFf7Y8Pkx/YI31mNaA5tBAksXUCfkQDEA+rg5izvqR9fPQAMg34J6l9Ev3tFh3WL84bmi3MRwMQP4O/sbOWj9RD4hfLt66DOJN67x1j3UN3Ieb2FUyptzQqQbSanL9BEvSAvkz9YDyQasyiLet71lPhAZAPiMPtErk4RwcdPGhKkQdiLryBcRJ60a4Zy88ILHLeoWgO6kr8wpq7zvqiY83xjo8VC5YJ76B6Lfwq6W0fp7X8KcteWtwGSaPN7XK3CO8eBBFvZ/ZU7jgVvXqXv1bf+/y6YPAru3/gsU592mjN7Zj4IVTLFwPSuDqDaL4g/DgJFLvJwZcatB5cJFBtZiFqHx2nGFQ+GQlgNkLR8/Jp14eAy/nmv7j7tquFDKZIzbppCuIhbJDAAAAAElFTkSuQmCC">
             Nome do restaurante
         </h4>
     </ul>
@@ -40,24 +40,42 @@
     <span></span>
     <ul class="nav justify-content-center">
         <li class="nav-item">
-            <a class="nav-link" href="<?=URL?>/restaurante/dashboard">Dasboard</a>
+            <a class="nav-link" href="<?=URL?>/restaurante/dashboard">
+                <i class="fas fa-desktop"></i>
+                Dasboard
+            </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="<?=URL?>/restaurante/pedidos">Pedidos</a>
+            <a class="nav-link" href="<?=URL?>/restaurante/pedidos">
+                <i class="fas fa-shopping-basket"></i>
+                Pedidos
+            </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="<?=URL?>/restaurante/cardapio">Cardápio</a>
+            <a class="nav-link" href="<?=URL?>/restaurante/cardapio">
+                <i class="far fa-list-alt"></i>
+                Cardápio
+            </a>
         </li>
         <li class="nav-item border">
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="<?=URL?>/restaurante/configuracoes">Configurações</a>
+            <a class="nav-link" href="<?=URL?>/restaurante/configuracoes">
+                <i class="fas fa-wrench"></i>
+                Configurações
+            </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="<?=URL?>/restaurante/relatorios">Relatórios</a>
+            <a class="nav-link" href="<?=URL?>/restaurante/relatorios">
+                <i class="fas fa-chart-bar"></i>
+                Relatórios
+            </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="<?=URL?>/restaurante/ajuda">Ajuda</a>
+            <a class="nav-link" href="<?=URL?>/restaurante/ajuda">
+                <i class="fas fa-question-circle"></i>
+                Ajuda
+            </a>
         </li>
     </ul>
     <span></span>
