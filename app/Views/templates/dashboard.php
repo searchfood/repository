@@ -70,6 +70,12 @@
                 <i class="fas fa-chart-bar"></i>
                 Relatórios
             </a>
+        </li>        
+        <li class="nav-item">
+            <a class="nav-link" href="<?=URL?>/restaurante/ajuda">
+                <i class="fas fa-sitemap"></i>
+                Extensões
+            </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="<?=URL?>/restaurante/ajuda">
