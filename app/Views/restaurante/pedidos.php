@@ -22,7 +22,7 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     </head>
-    <style>.card {-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.10);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.10);box-shadow: 0 1px 2px rgba(0,0,0,.10);border: 1px solid rgba(0,0,0,.2);border-radius: 0;color: black;}.card-header{font-size: 22px;}.card-footer{background-color: #fff;}</style>
+    <style>.card {-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.10);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.10);box-shadow: 0 1px 2px rgba(0,0,0,.10);border: 1px solid rgba(0,0,0,.2);border-radius: 0;color: black;}.card-header{font-size: 22px;border-bottom: 2px solid #d20911;}.card-footer{background-color: #fff;}</style>
     <body style="font-family: 'Niramit', sans-serif;background-color: #f1f2f7;">
 
         <?php include 'app/Views/templates/dashboard.php'?>
@@ -32,6 +32,7 @@
                 <div class="col-5 pr-0">
                     <div class="card">
                         <div class="card-header">
+                            <i class="fas fa-shopping-basket"></i>
                             Pedidos em Aberto   
                             <h1 style="float: right;font-size: 20px;margin-bottom: 0" class="badge badge-success badge-pill">0</h1>                         
                         </div>
@@ -48,6 +49,7 @@
                 <div class="col">
                     <div class="card">
                         <div class="card-header">
+                            <i class="fas fa-file-alt"></i>
                             Detalhes do Pedido
                         </div>
                         <div class="card-body">

@@ -29,8 +29,9 @@
 
         <div class="container mt-5">
             <section class="row">
+                <?php $array = array("top", "bottom", "left", "right"); ?>
                 <div class="col-md-3">
-                    <div class="card text-success">
+                    <div class="card text-success" data-html="true" data-tooltip="tooltip" data-placement="<?= $array[rand(0, 3)] ?>" title="Meus Ganhos <br> R$ 0,00">
                         <div class="card-body p-2">                    
                             <img style="float: left" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANgSURBVGhD7ZhLaBNBGMe3vg8+8XmyUJLNNrYe1LM96EUvKtKD2mZmI0Qt6kmPGkEEERXBB9Q3Hoqmmd1atVfrSUQUi69DLxVEBLXqRRSq8f9tAjbJh7jb2ZrALvzIMt83m/nt7MzOrJFwxVbTke8SjizUIWOmEoNmf2aRgZP3TEJ9ocQRgw3UG0pciERqikik1ohEao3wRcRPU8lR/H7h45oIWwQrhjcGjmSuczkX10Yk8g/Q0gcoEmlSHUsSSj4Cn7ncCaNdRMlf4GLCla0kUHms7s5MN12xGX/8kq0fFJ0ieIx+xPNyIzU4meuajbK0J6Wki57pMR1xzOxNraR44zUxC5NAvvIagdEpYjlyLzUynk+txYU/cDlejzniNOUlc+0zUPa0KicIukRwt0eMXPtUy+lciPNPXE45YjfJWI7dxsd9oq9HxHlqGB6XLj5exVsjm51SrCOGmbg/tIkosb/UqDNsnKM0IeD8RlXML7pELFdkPBFHXOXiHMg9HM/b6yHfz8V9oW2MKHHUu7voGS4eOhoH+2MSiQ3smItp+AWXEyr6BrssxFVqC8nQzIVp9jLKvlXmhIZOETT+K97a60iGjqZcZl5C2TZmtJuhf27SKuJBy3ZxnVuiUBniBxEfLL4YufoB0S/yBzR4GJxFb2zyPqCNO+JOZzOk7nH1AhGmSBnFHhiC2CFa0ns2BaMBL9ATVblBmDSRcsbQG8dJhN7u6LGHTI4//pNIkdJqALNdio37QYcI3iHPW+9uX9Dcm1rBxf/CEImYeWExMX9oEVHyIzWotCxnc1iw1Kd6Lbd3LmXjftD1aCVzYhk1Cr3zhIvziGdUx1JyFR/3gbYxouQur1GOFGycAYM8S3VQ9wAX94VGkVe0H6eGYYq9wuaMw+u5vvSc2MC+mTgf4XJ8oU2EUOIUidCRcIVE2evKHBpP6ImTJEHTL8omvhchtIp4iEuNrphf8sH+3W4yndQG2ndYKt1C22EqpzGFnrvDXyMA+kW8uz5KFzYduyPWZyep4W33s9MSvek11FMQ6EH8O1c3MGGIjAePUfTJ1Bdhi+AP6PtWOx6zPVUxnYQuMllEIrVGJFJrRCK1RkkEe2gmWF+cI5EHFYV1h+XY24zYLXsxbXKw2OuuN+iR8iQKRsNvh9Seg/tXCS0AAAAASUVORK5CYII=">
                             <h4 class="text-center my-2">R$ 0,00</h4>
@@ -41,7 +42,7 @@
                     </div>
                 </div>                
                 <div class="col-md-3">
-                    <div class="card text-info">
+                    <div class="card text-info" data-html="true" data-tooltip="tooltip" data-placement="<?= $array[rand(0, 3)] ?>" title="Pedidos Entregues <br> 0">
                         <div class="card-body p-2">                                
                             <i style="float: left;font-size: 50px" class="fas fa-shipping-fast"></i>
                             <h4 class="text-center my-2">0</h4>
@@ -52,7 +53,7 @@
                     </div>
                 </div>                
                 <div class="col-md-3">
-                    <div class="card text-dark">
+                    <div class="card text-dark" data-html="true" data-tooltip="tooltip" data-placement="<?= $array[rand(0, 3)] ?>" title="Funcionários <br> 0">
                         <div class="card-body p-2">                                                            
                             <img style="float: left;width: 50px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAL/SURBVGhD7Zo9iBNBFMdz5xcW4ic2Nn6kCiZhc0kMUQiHNiKWsbRSRDgtvEKwuE4sBCshXmeh4AdaiGJhZSEiCOKBJ4iFIiLeITZ34IF3+pv1JeQm426STWait3/4scnMe2/eP7uB2U0SsUKUy+VG4dnIyMgCx1mOk6VSaYtM/xui8SPwk+Z/NcPYq1QqtVbCBl5DNPxeGp/gLKzP5/O7ef9SxsYlbrCVzWZ3yhn4DNtghuZrnucdlfHHEupO1Wp1VTqd3hwEje5XDdP8FKY28XoaLsIBNQ7PTXnNlMvlDbJkb1UoFLbSwC2am5dmQlFGJN0XY3UjbUH+Jzgh6b0Rhe/oC4UR1YiwxCV5UEpEU6VSWU3BH9oC7fCm+XLhC3/YEBMKH0hNWokmim3Ui9sEIzellWiiWGykF8RGdFEsNkITar/1FRaaxzvBtZE5OKX2WVJmmPdjNPWxKaYtXBsZk/RlUtt45tQezJRjxKmRTCazXdJbxPxVPT4Ip0bU5lLSW8T8ZT0+CKdGWHyPpLeI+et6fBCujYxKeouYmzLl/A2nRtQmUdJbxPxtPT4I12fktKQvkzLI/Ds9PginRuB7MplcJyUaoqmzhthAXBtRDVyQEr7UbS9jb02xQTg3Ak+lhC/ed3OHOBBn5K6U8MUd4l7Gl/S4MFwaWYQHXEo7pERDNHUSvmjxgbgwMseiVzzPS0qqUcStIe4YvNDyjdg2Ml0sFndJSrsaIu+8VqcFq0Y4C3kJ71g0+tBUs441Iyw0zxf5ULeQXzPVrWP1jPST2Iguiq0oI69Z8EmXfDPUa8C8tS/7bNAdYZioUdVrNmPTiHrkcwZUQ91wH4y1FdaM9BurRlhMbTfUbyidcg/UAzxjXYVNIzOEDf+J7lzkq8vLVNfHppFFFhvnqF/7oZCnNo+PeG2q62PTSF+Jjeii2P9hRP3mbVrAIjekleiiWEdP0HsJZ2RC2oguCh4HdS9uXKyPfOj5P4r4ZPbBJYpP9hvWucbxnHoWJsuvFCUSvwEX+K25n66sTQAAAABJRU5ErkJggg==">
                             <h4 class="text-center my-2">0</h4>
@@ -63,7 +64,7 @@
                     </div>
                 </div>                
                 <div class="col-md-3">
-                    <div class="card" style="color: #f39c12;">
+                    <div class="card" style="color: #f39c12;" data-html="true" data-tooltip="tooltip" data-placement="<?= $array[rand(0, 3)] ?>" title="Avaliações <br> 0">
                         <div class="card-body p-2">                                
                             <img style="float: left;width: 50px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPRSURBVHhe7VpNaNRAGI2/qBR2Z7YqgigeBA8V9SSIIHoSPHgRxYMHwYv4c1CvIlpBEBVEUZPJtuAPaEHw4EFPClLBinjRQ7V48Cq0brJWRDR+3+brst39bJLd6SZp8uCRkJl5X97b2WSSXSNHjhw5cuTIkYPDuCkKri0uAEcdJX+5tvTSQP9cxSieO3ogO9EwaYo1IDbWLJ5Cjk1YhXVkKxy8c8Z8R4m3jFgqCV7eoSeyF4yKXdzDCaWZjlXaS/aC4djyCieSZjq2uEH2ggEB3ONE0kzw9IDsBQM7cyK6CVfrv0iuTTeTGYAtnyG5Nt1MZAB4se3WBTeBAYjPeGtC4j7fRx8TF0DVFmeonOEqcZrro5OJCgBuST8mBgtFKmfgPswCl+uri8maAUpaVKoOPMb21cREBVAtFzdRqTpgBvRxfXUxOQEo+ZLKtAC+Gi/YMRqYnADKYj+VaYFjyX3sGA2c9QDgiWsSVnVf4VMcgU/5KVzZB2F7Gab2qapdOlRVYnfVKmz2howFVKYF2OZ/FUo7XUschPEnQacf9E04/gS2w7AdhWNOY+0w7MYMuOR5xjySmDX4j+ryKlN/RnYjACzy0Btcu4RktOPvo9VLYQY85moHsSsB1KjkK8fs6SUpbXBvrVwB5t+wNUOwewEglfhUGehdT3IdwzFLG0D3S0udCOxuAD6/OWWxnSTbhlMu7gCt8SbtyIwjALwz/ITZcIBkIwPvHv4bXl4/CmMJAIkvPCpKHibp0IDwjuh8WRJbADUqeZykQ8O1SsdYrTYZawBVu7CFpEMDnxc4rXYZXwBKVGZa/f0P/qpQfm/Ra5OxBQDf5eckGxlwHtreF8YYgDxLstMAS9qF0H4Cift0eBpwbKNWJ4wtALiY7SLZOiqm2AY13k/1wX08Rs111B6KGrU6YCwBgM5vz1y1jGRhUdOzHJazA9ztzT8GbdCHuhs4FjWa+7bDmAIQI6jnP8EVj8LtcILrN43QB/viGBzbyfq/kXEFcK1Sllvx11mufSbimNpY0ODaozKmAOQH4B+uLQxxLGpwbVGJnsheMLAzJ5Jm5gHkAUQLYO79P0CJu2QvGHDruciJpJviPNkLBr6+1vksHjdrXgaKG8leOMDAO81CaSWsJa6TrfCAx9HFsCq7neaZANcyWEeIm55pLCJb0VF7MaFEPwRxH0SHGLLFW6jER9hy47XTP9faP1z7yMbsAQryhhup5Ou2/7KadLCGGzmXzSNY01Oc6+YRrHFkFswjMm0ekWnziKYAhjNlHpFp84hMm0dk2jwi0+ZzpB6G8Q9Dt3fuVSxBFwAAAABJRU5ErkJggg==">                            
                             <h4 class="text-center my-2">0</h4>
