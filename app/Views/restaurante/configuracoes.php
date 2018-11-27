@@ -94,21 +94,21 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label for="restaurant_name">Nome do Restaurante:</label>
-                                                <input type="text" name="restaurant_name" id="restaurant_name" class="form-control" placeholder="Nome do Restaurante" aria-describedby="error_restaurant_name">
+                                                <input type="text" name="restaurant_name" id="restaurant_name" class="form-control" placeholder="Nome do Restaurante" aria-describedby="error_restaurant_name" value="<?= $restaurant->Select('restaurant_name') ?>">
                                                 <small id="error_restaurant_name" class="text-danger"></small>
                                             </div>
                                             <div class="row">
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="cnpj">CNPJ:</label>
-                                                        <input type="text" name="cnpj" id="cnpj" class="form-control" placeholder="CNPJ" aria-describedby="error_cnpj">
+                                                        <input type="text" name="cnpj" id="cnpj" class="form-control" placeholder="CNPJ" aria-describedby="error_cnpj" value="<?= $restaurant->Select('cnpj') ?>">
                                                         <small id="error_cnpj" class="text-danger"></small>
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="restaurant_phone">Telefone do Restaurante:</label>
-                                                        <input type="text" name="restaurant_phone" id="restaurant_phone" class="form-control" placeholder="Telefone do Restaurante" aria-describedby="error_restaurant_phone">
+                                                        <input type="text" name="restaurant_phone" id="restaurant_phone" class="form-control" placeholder="Telefone do Restaurante" aria-describedby="error_restaurant_phone" value="<?= $restaurant->Select('restaurant_phone') ?>">
                                                         <small id="error_restaurant_phone" class="text-danger"></small>
                                                     </div>
                                                 </div>
@@ -117,23 +117,23 @@
                                                 <div class="col-8">
                                                     <div class="form-group">
                                                         <label for="address">Endereço:</label>
-                                                        <input type="text" name="address" id="address" class="form-control" placeholder="Endereço" aria-describedby="error_address">
+                                                        <input type="text" name="address" id="address" class="form-control" placeholder="Endereço" aria-describedby="error_address" value="<?= $restaurant->Select('address') ?>">
                                                         <small id="error_address" class="text-danger"></small>
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="neighborhood">Bairro:</label>
-                                                        <input type="text" name="neighborhood" id="neighborhood" class="form-control" placeholder="Bairro" aria-describedby="error_neighborhood">
+                                                        <input type="text" name="neighborhood" id="neighborhood" class="form-control" placeholder="Bairro" aria-describedby="error_neighborhood" value="<?= $restaurant->Select('neighborhood') ?>">
                                                         <small id="error_neighborhood" class="text-danger"></small>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-3">
+                                                <div class="col-4">
                                                     <div class="form-group">
                                                         <label for="cep">CEP:</label>
-                                                        <input type="text" name="cep" id="cep" class="form-control" placeholder="CEP" aria-describedby="error_cep">
+                                                        <input type="text" name="cep" id="cep" class="form-control" placeholder="CEP" aria-describedby="error_cep" value="<?= $restaurant->Select('cep') ?>">
                                                         <small id="error_cep" class="text-danger"></small>
                                                     </div>
                                                 </div>
@@ -141,16 +141,16 @@
                                                     <div class="form-group">
                                                         <label for="state">Estado:</label>
                                                         <select class="form-control" name="state" id="state">
-                                                            <option value=""></option>
+                                                            <option value=""><?= $restaurant->Select('state') ?></option>
                                                         </select>
                                                         <small id="error_state" class="text-danger"></small>
                                                     </div>
                                                 </div>
-                                                <div class="col-6">
+                                                <div class="col-5">
                                                     <div class="form-group">
                                                         <label for="city">Cidade:</label>
                                                         <select class="form-control" name="city" id="city">
-                                                            <option value=""></option>
+                                                            <option value=""><?= $restaurant->Select('city') ?></option>
                                                         </select>
                                                         <small id="error_city" class="text-danger"></small>
                                                     </div>
@@ -184,14 +184,14 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label for="owner_name">Nome do Proprietário:</label>
-                                                <input type="text" name="owner_name" id="owner_name" class="form-control" placeholder="Nome do Proprietário" aria-describedby="error_owner_name">
+                                                <input type="text" name="owner_name" id="owner_name" class="form-control" placeholder="Nome do Proprietário" aria-describedby="error_owner_name" value="<?= $restaurant->Select('owner_name') ?>">
                                                 <small id="error_owner_name" class="text-danger"></small>
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div class="form-group">
                                                 <label for="owner_email">Email do Proprietário:</label>
-                                                <input type="email" name="owner_email" id="owner_email" class="form-control" placeholder="Email do Proprietário" aria-describedby="error_owner_email">
+                                                <input type="email" name="owner_email" id="owner_email" class="form-control" placeholder="Email do Proprietário" aria-describedby="error_owner_email" value="<?= $restaurant->Select('owner_email') ?>">
                                                 <small id="error_owner_email" class="text-danger"></small>
                                             </div>
                                         </div>
@@ -200,14 +200,14 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label for="cpf">CPF:</label>
-                                                <input type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" aria-describedby="error_cpf">
+                                                <input type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" aria-describedby="error_cpf" value="<?= $restaurant->Select('cpf') ?>">
                                                 <small id="error_cpf" class="text-danger"></small>
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div class="form-group">
                                                 <label for="owner_phone">Telefone do Proprietário:</label>
-                                                <input type="text" name="owner_phone" id="owner_phone" class="form-control" placeholder="Telefone do Proprietário" aria-describedby="error_owner_phone">
+                                                <input type="text" name="owner_phone" id="owner_phone" class="form-control" placeholder="Telefone do Proprietário" aria-describedby="error_owner_phone" value="<?= $restaurant->Select('ower_phone') ?>">
                                                 <small id="error_owner_phone" class="text-danger"></small>
                                             </div>
                                         </div>

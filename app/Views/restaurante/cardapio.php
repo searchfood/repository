@@ -22,50 +22,12 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     </head>
-    <style>.card {-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.10);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.10);box-shadow: 0 1px 2px rgba(0,0,0,.10);border: 1px solid rgba(0,0,0,.2);border-radius: 0;color: black;}.card-header{font-size: 22px;border-bottom: 2px solid #d20911;}.card-footer{background-color: #fff;}.form-control, .btn {border-radius: 2rem;}</style>
+    <style>.card {-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.10);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.10);box-shadow: 0 1px 2px rgba(0,0,0,.10);border: 1px solid rgba(0,0,0,.2);border-radius: 0;color: black;}.card-header{font-size: 22px;border-bottom: 2px solid #d20911;}.card-footer{background-color: #fff;}.form-control, .btn {border-radius: 2rem;}.list-group .active {background-color: #fff;color: black;border: 1px solid #FF0000;border-left: 5px solid #FF0000;border-radius: 0}</style>
     <body style="font-family: 'Niramit', sans-serif;background-color: #f1f2f7;">
 
         <?php include 'app/Views/templates/dashboard.php'?>
 
-        <div class="container mt-5">
-            <div class="row">
-                <div class="col-4">
-                    <div class="card">
-                        <div class="card-header">
-                            <i class="fas fa-tags"></i>
-                            Categorias
-                            <button data-toggle="modal" data-target="#addCategoria" style="float: right" type="button" class="btn btn-success btn-sm" data-tooltip="tooltip" data-placement="top" title="Adicionar Nova Categoria">
-                                <i class="fas fa-plus"></i>
-                            </button>
-                        </div>
-                        <div class="card-body p-0">
-                            <div class="list-group" id="myList" role="tablist">
-                                <!-- <a class="list-group-item list-group-item-action active" data-toggle="list" href="#home" role="tab">Home</a> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="" role="tabpanel">
-                            <div class="card">
-                                <div class="card-header">
-                                    <i class="fas fa-tag"></i>
-                                    Nome da Categoria
-                                    <button data-toggle="modal" data-target="" style="float: right" type="button" class="btn btn-success btn-sm" data-tooltip="tooltip" data-placement="top" title="Adicionar Novo Item">
-                                        <i class="fas fa-plus"></i>
-                                        Novo Item
-                                    </button>
-                                </div>
-                                <div class="card-body p-0">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>                                        
-                </div>
-            </div>
-        </div>
+        
 
         <!-- Modal Adicionar nova Categoria -->
         <div class="modal fade" id="addCategoria" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
@@ -85,9 +47,11 @@
                                 <small id="error_category_name" class="text-danger" style="float: right"></small>
                             </div>                            
                         </div>
+                        <input type="hidden" name="category_action" value="insert">
+                        <input type="hidden" name="restaurant_id" value="2">
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                            <button type="button" class="btn btn-success">Salvar</button>
+                            <button type="submit" class="btn btn-success">Salvar</button>
                         </div>
                     </form>
                 </div>

@@ -14,6 +14,11 @@ class Restaurants
         $this->db = $connection->getConnection();
     }
 
+    public function Insert($values)
+    {
+        
+    }
+
     public function Select($id)
     {
         $sql = "SELECT * FROM restaurants WHERE id = '$id'";
@@ -21,5 +26,15 @@ class Restaurants
         $result = mysqli_query($this->db, $sql);
 
         return $result;
+    }
+
+    public function Update($values, $id)
+    {
+        
+    }
+
+    public function Delete($id)
+    {
+        
     }
 }

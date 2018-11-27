@@ -1,7 +1,11 @@
 <?php
     use app\Controllers\RestaurantsController;
+    use app\Controllers\CategoriesController;
+    use app\Controllers\MenusController;
 
     $restaurant = new RestaurantsController();
+    $category = new CategoriesController();
+    $menu = new MenusController();
 ?>
 <!--Estrutura do Template-->
 <nav id="navbar" class="navbar navbar-dark bg-dark">
@@ -20,11 +24,26 @@
         <?php include 'app/Views/templates/notification.php' ?>
 
         <div class="border ml-3"></div>
-        <div class="nav-item" data-html="true" data-tooltip="tooltip" data-placement="bottom" title="Status da Conta: <br> Inativo">
-            <span class="nav-link">
-                <?php ?>
-                <i class="fas fa-circle" style="color: #FF0000"></i>            
-                Inativo
+        <div class="nav-item" data-html="true" data-tooltip="tooltip" data-placement="bottom" title="Status da Conta">
+            <span class="nav-link">                
+                <?php $status = $restaurant->Select('status') ?>
+                <?php switch ($status) {
+                    case '1': ?>
+                        <i class="fas fa-circle" style="color: #FF0000"></i>            
+                        Inativo
+                    <?php break;
+                    case '2': ?>
+                        <i class="fas fa-circle" style="color: yellowgreen"></i>            
+                        Ativo
+                    <?php break;
+                    case '3': ?>
+                        <i class="fas fa-ban" style="color: #FF0000"></i>            
+                        Bloqueado
+                    <?php break;
+                    
+                    default:                        
+                        break;
+                } ?>
             </span> 
         </div>
         <div class="border"></div>
