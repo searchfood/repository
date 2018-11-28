@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `db_searchfood`.`restaurants` (
   `owner_name` VARCHAR(45) NOT NULL,
   `cpf` CHAR(14) NOT NULL,
   `owner_email` VARCHAR(45) NOT NULL,
-  `ower_phone` CHAR(14) NOT NULL,
+  `owner_phone` CHAR(14) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
   `password` VARCHAR(45) NOT NULL,
   `status` INT NOT NULL,
