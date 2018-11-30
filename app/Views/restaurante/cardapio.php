@@ -27,42 +27,131 @@
 
         <?php include 'app/Views/templates/dashboard.php'?>
 
-        <div class="container mt-5">
+        <div class="container mt-5">            
             <div class="row">
                 <div class="col-4">
                     <div class="card">
                         <div class="card-header" id="category_menu">
                             <i class="fas fa-tags"></i>
                             Categorias
-                            <button type="button" data-toggle="modal" data-target="#addCategory" class="btn btn-sm btn-success" style="float: right">
+                            <button type="button" data-toggle="modal" data-target="#addCategory" class="btn btn-sm btn-success" style="float: right" data-tooltip="tooltip" data-placement="top" title="Adicionar Nova Categoria">
                                 <i class="fas fa-plus"></i>
                             </button>
                         </div>
+                        <?php if ($category->Select('2')) { ?>
                         <div class="card-body p-0">
-                            <div class="list-group" id="myList" role="tablist">
-                                <a class="list-group-item list-group-item-action active" data-toggle="list" href="#home" role="tab">
-                                 
-                                </a>
-                             </div>
+                            <?php $categories = $category->Select('2'); ?>
+                            <div class="list-group" id="list-tab" role="tablist">
+                                <?php for ($i=0; $i < mysqli_num_rows($categories); $i++) { ?>
+                                    <?php $row_category = mysqli_fetch_assoc($categories); ?>
+                                    <?php if($i == 0) {?>
+                                        <a class="list-group-item list-group-item-action active" data-toggle="list" href="#<?= $row_category['id'] ?>" role="tab">
+                                            <?= $row_category['category_name'] ?>
+                                            <?php $num_itens = $menu->Select($row_category['id']) ?>
+                                            <?php if ($num_itens == 1) { ?>
+                                                <span style="float: right" data-tooltip="tooltip" data-placement="right" title="<?=$num_itens?> Item" class="badge badge-danger badge-pill">
+                                                    <?=$num_itens?> 
+                                                </span> 
+                                            <?php } else if ($num_itens > 1) { ?>
+                                                <span style="float: right" data-tooltip="tooltip" data-placement="right" title="<?=$num_itens?> Itens" class="badge badge-danger badge-pill">
+                                                    <?=$num_itens?> 
+                                                </span> 
+                                            <?php } else { ?>
+                                                <span style="float: right" data-tooltip="tooltip" data-placement="right" title="0 Item" class="badge badge-danger badge-pill">
+                                                    0 
+                                                </span> 
+                                            <?php } ?>
+                                        </a>
+                                    <?php } else { ?>
+                                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#<?= $row_category['id'] ?>" role="tab">
+                                            <?= $row_category['category_name'] ?>
+                                            <?php $num_itens = $menu->Select($row_category['id']) ?>
+                                            <?php if ($num_itens == 1) { ?>
+                                                <span style="float: right" data-tooltip="tooltip" data-placement="right" title="<?=$num_itens?> Item" class="badge badge-danger badge-pill">
+                                                    <?=$num_itens?> 
+                                                </span> 
+                                            <?php } else if ($num_itens > 1) { ?>
+                                                <span style="float: right" data-tooltip="tooltip" data-placement="right" title="<?=$num_itens?> Itens" class="badge badge-danger badge-pill">
+                                                    <?=$num_itens?> 
+                                                </span> 
+                                            <?php } else { ?>
+                                                <span style="float: right" data-tooltip="tooltip" data-placement="right" title="0 Item" class="badge badge-danger badge-pill">
+                                                    0 
+                                                </span> 
+                                            <?php } ?>
+                                        </a>
+                                    <?php } ?>                                        
+                                <?php } ?>
+                            </div>
                         </div>
+                        <?php } else { ?>
+                            <div class="card-body" style="border-top: 2px solid #d20911">
+                                <p class="text-center text-muted mb-0">
+                                    "Não há nenhuma Categoria cadastrada.
+                                    Click do icone <i class="fa fa-plus-circle text-success"></i>
+                                    para adicionar uma nova Categoria."
+                                </p>
+                            </div>
+                        <?php } ?>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="tab-content" id="nav-tabContent">
+                        <?php if ($category->Select('2')) { ?>                      
+                            <?php $categories = $category->Select('2'); ?>    
+                            <?php for ($i = 0; $i < mysqli_num_rows($categories); $i++) {  ?>                                 
+                                <?php $row_category = $categories->fetch_assoc(); ?> 
+                                <?php if ($i == 0) { ?>    
+                                <?=$i?>                                                                                         
+                                    <div class="tab-pane active" id="<?= $row_category['id'] ?>" role="tabpanel">
+                                        <div class="card mb-5">
+                                            <div class="card-header">
+                                                <i class="fas fa-tag"></i>
+                                                <?= $row_category['category_name'] ?>
+                                            </div>
+                                            <div class="card-body">
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php } else { ?> 
+                                <?=$i?> 
+                                    <div class="tab-pane" id="<?= $row_category['id'] ?>" role="tabpanel">
+                                        <div class="card mb-5">
+                                            <div class="card-header">
+                                                <i class="fas fa-tag"></i>
+                                                <?= $row_category['category_name'] ?>
+                                            </div>
+                                            <div class="card-body">
+                                            
+                                            </div>
+                                        </div>
+                                    </div>                 
+                                <?php } ?>                  
+                            <?php } ?>                  
+                        <?php } ?>
+                    </div>    
+                </div>
+            </div>
+            <!-- <div class="row mt-5 pt-5 mb-5 pb-5">
+                <div class="col">
+                    <div class="list-group" id="myList" role="tablist">
+                        <a class="list-group-item list-group-item-action active" data-toggle="list" href="#home" role="tab">Home</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#profile" role="tab">Profile</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#messages" role="tab">Messages</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#settings" role="tab">Settings</a>
                     </div>
                 </div>
                 <div class="col">
                     <div class="tab-content">
-                        <div class="tab-pane active" id="home" role="tabpanel">
-                            <div class="card">
-                                <div class="card-header">
-                                    <i class="fas fa-tag"></i>
-                                </div>
-                                <div class="card-body">
-                                
-                                </div>
-                            </div>
-                        </div>
+                        <div class="tab-pane active" id="home" role="tabpanel">1</div>
+                        <div class="tab-pane" id="profile" role="tabpanel">2</div>
+                        <div class="tab-pane" id="messages" role="tabpanel">3</div>
+                        <div class="tab-pane" id="settings" role="tabpanel">...</div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div>  -->
+        </div>               
 
         <!-- Modal Adicionar nova Categoria -->
         <div class="modal fade" id="addCategory" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
