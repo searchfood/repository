@@ -101,8 +101,7 @@
                             <?php $categories = $category->Select('2'); ?>    
                             <?php for ($i = 0; $i < mysqli_num_rows($categories); $i++) {  ?>                                 
                                 <?php $row_category = $categories->fetch_assoc(); ?> 
-                                <?php if ($i == 0) { ?>    
-                                <?=$i?>                                                                                         
+                                <?php if ($i == 0) { ?>                                                                                                                            
                                     <div class="tab-pane active" id="<?= $row_category['id'] ?>" role="tabpanel">
                                         <div class="card mb-5">
                                             <div class="card-header">
@@ -114,8 +113,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                <?php } else { ?> 
-                                <?=$i?> 
+                                <?php } else { ?>                                  
                                     <div class="tab-pane" id="<?= $row_category['id'] ?>" role="tabpanel">
                                         <div class="card mb-5">
                                             <div class="card-header">
