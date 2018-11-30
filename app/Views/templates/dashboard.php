@@ -71,7 +71,7 @@
                 <i class="fas fa-desktop"></i>
                 Dasboard
             </a>
-        </li>
+        </li>    
         <li class="nav-item">
             <a class="nav-link" href="<?=URL?>/restaurante/pedidos">
                 <i class="fas fa-shopping-basket"></i>

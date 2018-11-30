@@ -25,6 +25,10 @@
     <body style="font-family: 'Niramit', sans-serif;background-color: #f1f2f7;">
 
         <?php include 'app/Views/templates/dashboard.php'?>
+
+        <div class="container mt-5 mb-5">
+                        
+        </div>
         
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

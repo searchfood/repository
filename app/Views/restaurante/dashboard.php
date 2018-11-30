@@ -27,7 +27,7 @@
 
         <?php include 'app/Views/templates/dashboard.php'?>
 
-        <div class="container mt-5">
+        <div class="container mt-5 mb-5">
             <section class="row">
                 <?php $array = array("top", "bottom", "left", "right"); ?>
                 <div class="col-md-3">

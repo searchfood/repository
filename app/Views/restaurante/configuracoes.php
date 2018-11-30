@@ -22,12 +22,12 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     </head>
-    <style>.card {-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.10);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.10);box-shadow: 0 1px 2px rgba(0,0,0,.10);border: 1px solid rgba(0,0,0,.2);border-radius: 0;color: black;}.card-header{font-size: 20px;}#nav-tabContent .card .card-header{border-bottom: 2px solid #d20911;font-size: 22px}.list-group-item.active{background-color: #f1f2f7;color: black;border: 1px solid #d20911;border-left: 5px solid #d20911;border-radius: 0;}.form-control, .btn {border-radius: 2rem;}</style>    
+    <style>.card {-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.10);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.10);box-shadow: 0 1px 2px rgba(0,0,0,.10);border: 1px solid rgba(0,0,0,.2);border-radius: 0;color: black;}.card-header{font-size: 20px;}#nav-tabContent .card .card-header{border-bottom: 2px solid #d20911;font-size: 22px}.card-footer{border-top: 2px solid #d20911;}.list-group-item.active{background-color: #f1f2f7;color: black;border: 1px solid #d20911;border-left: 5px solid #d20911;border-radius: 0;}.form-control, .btn {border-radius: 2rem;}</style>    
     <body style="font-family: 'Niramit', sans-serif;background-color: #f1f2f7;" data-spy="scroll" data-target="#list-example">
 
         <?php include 'app/Views/templates/dashboard.php'?>
 
-        <div class="container mt-5" id="topo">
+        <div class="container mt-5 mb-5" id="topo">
             <div class="row">
                 <div class="col-3 pr-0">
                     <div class="card" id="menu">
@@ -37,27 +37,27 @@
                         </div>
                         <div class="card-body p-0">
                             <div id="list-example" class="list-group">
-                                <a class="list-group-item list-group-item-action scroll" href="#navbar">
+                                <a class="list-group-item list-group-item-action scroll text-truncate" href="#navbar" >
                                     <img width="19" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPlSURBVGhD7ZhbiE1xFMZHSMatJLlELqNhysycmTPTmNQ8KAmFmFxTCuUBiQeKPBDKRJPIpTyIRyEP4oGR8qAITx4k44FyS8ilhvFb+6z/v3X2+R9iDLuZ/dXX3uf7vrX3Wvt29jklPRoNDQ3Ds9nspKQxk8mM0RZ/jZqamlO1tbWdSSX93WlsbByi7YZBcGq8MIlkmLXachiEZsaLEsrt2nIYTNoQKEoc6XObthxGRUXFYIIv44UJ43du/DptuTgIlTPxAQpOJI301cqTa5a22kvA1JOZfqeclQRyD1dMo7ZaHPX19UMZItH3CMN0MExGWw6D629GqDhpZJit2nIYhHrG9wiBhbGCRJIzckhbDoPAuVBh0kif7bTbJ9d1DJWVlYMIfXRh7pdV8sbpSHH8W3+19fncbH3y860vRHtv/Bbrsb9p6N+dDzdan/xs4wlnauv5ILjChVj/xKv8QLUisKM5ZiOdVVVVY9WKgLbA+mxjuloe6O+M36KyB9oT4+9X2QOt3fjHVM4HxiUTuqqyB/pO479R2YNB1zhfyFEsV8uDuucmc1plj1gP11T2QDtm/Fcs+6uVg/yQQvzqQnCLWh4UXjD+TZU98LcaXzheLQ8y9oheVNkDba/xX6vsgT7X+ZqZp1YOCOttoLq6ukItDzLPzAYKTiv6PucLOSPj1PKg7rHJ3FbZg7O61PidfEFPVCtCWVnZAPQPzmd7Z9TKAeGGMeWJkAceBCOdr5kNanmgxX9ZDlPLg8xD57P+SGUPOYCmXg7GYrU8qPNXBuvy8CiNDI7CGD58cyY8GRkG8RsdFjwx0M7HMgWDoD0w/kuVPZqamvqhf3EZGg3d8GudL5Sz6IzN1uAoLIsMA3R/oytDR9ufVWFzc3NftTzI3HI+6x0q5wHvvsvAKyp71NXVjTK+8HxkyOmzBjvYFBkG6JdtJn7tCtCf2gyP5wlqebBtf7MrQw8Eey8WXOb0K99ZdhuH1YqK18EjcAd8wbU6RS1pcAm0X1Syg+NqR0Bbbn3N5D0QQhl4VO0I1KwMZJarLegj+0aTH1oHWd/NMnePWCBGL40EPsPr8J58DhGvDe5i/Sy095jNyDa6mhHtrGRgm2q/fGnsMW+/6SD/mL18EG4y+Z0ir+m/TWpbWYa2uZ9lsMZRbnCWBbXwj8/Izwt/AprxPw8s0fNf+AIg92f9EEgHKYZ0EEAuHSQdpBjSQQC5dJCePQg77Y5XlP9yRv4600Fy7CWDZLPZTKCoW9iVQagt+KcnD4T6E7obL+wOdmGQt6G/owpAsFR2wjL4FPpbZB+jdZdFQW5ErGaR/EGndooEo6TkB4pLnXfKZUqYAAAAAElFTkSuQmCC">
                                     Dados do Restaurante
                                 </a>
-                                <a class="list-group-item list-group-item-action scroll" href="#owner_data">
+                                <a class="list-group-item list-group-item-action scroll text-truncate" href="#owner_data">
                                     <i class="fas fa-user-tie"></i>
                                     Dados do Proprietário
                                 </a>
-                                <a class="list-group-item list-group-item-action scroll" href="#access_data">
+                                <a class="list-group-item list-group-item-action scroll text-truncate" href="#access_data">
                                     <i class="fas fa-key"></i>
                                     Dados de Acesso
                                 </a>
-                                <a class="list-group-item list-group-item-action scroll" href="#operating_hours">
+                                <a class="list-group-item list-group-item-action scroll text-truncate" href="#operating_hours">
                                     <i class="fas fa-stopwatch"></i>
                                     Horário de Funcionamento
                                 </a>
-                                <a class="list-group-item list-group-item-action scroll" href="#payment_methods">
+                                <a class="list-group-item list-group-item-action scroll text-truncate" href="#payment_methods">
                                     <i class="far fa-credit-card"></i>
                                     Formas de Pagamento
                                 </a>
-                                <a class="list-group-item list-group-item-action scroll" href="#contributors">
+                                <a class="list-group-item list-group-item-action scroll text-truncate" href="#contributors">
                                     <img width="20" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAL/SURBVGhD7Zo9iBNBFMdz5xcW4ic2Nn6kCiZhc0kMUQiHNiKWsbRSRDgtvEKwuE4sBCshXmeh4AdaiGJhZSEiCOKBJ4iFIiLeITZ34IF3+pv1JeQm426STWait3/4scnMe2/eP7uB2U0SsUKUy+VG4dnIyMgCx1mOk6VSaYtM/xui8SPwk+Z/NcPYq1QqtVbCBl5DNPxeGp/gLKzP5/O7ef9SxsYlbrCVzWZ3yhn4DNtghuZrnucdlfHHEupO1Wp1VTqd3hwEje5XDdP8FKY28XoaLsIBNQ7PTXnNlMvlDbJkb1UoFLbSwC2am5dmQlFGJN0XY3UjbUH+Jzgh6b0Rhe/oC4UR1YiwxCV5UEpEU6VSWU3BH9oC7fCm+XLhC3/YEBMKH0hNWokmim3Ui9sEIzellWiiWGykF8RGdFEsNkITar/1FRaaxzvBtZE5OKX2WVJmmPdjNPWxKaYtXBsZk/RlUtt45tQezJRjxKmRTCazXdJbxPxVPT4Ip0bU5lLSW8T8ZT0+CKdGWHyPpLeI+et6fBCujYxKeouYmzLl/A2nRtQmUdJbxPxtPT4I12fktKQvkzLI/Ds9PginRuB7MplcJyUaoqmzhthAXBtRDVyQEr7UbS9jb02xQTg3Ak+lhC/ed3OHOBBn5K6U8MUd4l7Gl/S4MFwaWYQHXEo7pERDNHUSvmjxgbgwMseiVzzPS0qqUcStIe4YvNDyjdg2Ml0sFndJSrsaIu+8VqcFq0Y4C3kJ71g0+tBUs441Iyw0zxf5ULeQXzPVrWP1jPST2Iguiq0oI69Z8EmXfDPUa8C8tS/7bNAdYZioUdVrNmPTiHrkcwZUQ91wH4y1FdaM9BurRlhMbTfUbyidcg/UAzxjXYVNIzOEDf+J7lzkq8vLVNfHppFFFhvnqF/7oZCnNo+PeG2q62PTSF+Jjeii2P9hRP3mbVrAIjekleiiWEdP0HsJZ2RC2oguCh4HdS9uXKyPfOj5P4r4ZPbBJYpP9hvWucbxnHoWJsuvFCUSvwEX+K25n66sTQAAAABJRU5ErkJggg==">
                                     Funcionários
                                 </a>
@@ -230,6 +230,9 @@
                             <div class="card-body">
                                 
                             </div>
+                            <div class="card-footer text-right">
+                            
+                            </div>                            
                         </div>
                         <div id="operating_hours"></div>
                         <div style="top: 13px" class="card mb-5">
@@ -238,6 +241,9 @@
                                 Horário de Funcionamento
                             </div>
                             <div class="card-body">
+                            
+                            </div>
+                            <div class="card-footer text-right">
                             
                             </div>
                         </div>
@@ -250,6 +256,9 @@
                             <div class="card-body">
                             
                             </div>
+                            <div class="card-footer text-right">
+                            
+                            </div>
                         </div>
                         <div id="contributors"></div>
                         <div style="top: 13px" class="card mb-5">
@@ -258,6 +267,9 @@
                                 Funcionários
                             </div>
                             <div class="card-body">
+                            
+                            </div>
+                            <div class="card-footer text-right">
                             
                             </div>
                         </div>
@@ -278,9 +290,8 @@
         <!-- JS Code -->
         <script type="text/javascript">
             $("body").scrollspy({target:"#list-example"}),$(function(){var i=$("#menu");$(window).scroll(function(){$(this).scrollTop()>i.scrollTop()+180?i.css({position:"fixed",top:"2%",width:"20%"}):i.css({position:"",top:"",width:""})}),$(window).ready(function(){$(this).scrollTop()>i.scrollTop()+180?i.css({position:"fixed",top:"2%",width:"20%"}):i.css({position:"",top:"",width:""})})}),$(document).ready(function(){function i(i){if(i.files&&i.files[0]){var t=new FileReader;t.onload=function(i){$("#img-upload").attr("src",i.target.result)},t.readAsDataURL(i.files[0])}}$(document).on("change",".btn-file :file",function(){var i=$(this),t=i.val().replace(/\\/g,"/").replace(/.*\//,"");i.trigger("fileselect",[t])}),$(".btn-file :file").on("fileselect",function(i,t){var o=$(this).parents(".input-group").find(":text"),e=t;o.length&&o.val(e)}),$("#imgInp").change(function(){i(this)})});
-            $(function () {
-                $('[data-toggle="popover"]').popover()
-            })
+            $(function () {$('[data-toggle="popover"]').popover()})
+            $(function () {$('[data-tooltip="tooltip"]').tooltip()})
         </script>
     </body>
 </html>

@@ -27,7 +27,7 @@
 
         <?php include 'app/Views/templates/dashboard.php'?>
 
-        <div class="container mt-5">            
+        <div class="container mt-5 mb-5">            
             <div class="row">
                 <div class="col-4">
                     <div class="card">

@@ -22,12 +22,12 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     </head>
-    <style>.card {-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.10);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.10);box-shadow: 0 1px 2px rgba(0,0,0,.10);border: 1px solid rgba(0,0,0,.2);border-radius: 0;color: black;}.card-header{font-size: 22px;border-bottom: 2px solid #d20911;}.col-md-3 .card .card-footer{background-color: #fff;border-top: 2px solid;font-size: 18px}</style>    
+    <style>.card {-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.10);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.10);box-shadow: 0 1px 2px rgba(0,0,0,.10);border: 1px solid rgba(0,0,0,.2);border-radius: 0;color: black;}.card-header{font-size: 22px;border-bottom: 2px solid #d20911;}.card-footer{border-top: 2px solid #d20911;}.col-md-3 .card .card-footer{background-color: #fff;border-top: 2px solid;font-size: 18px}.form-control, .btn {border-radius: 2rem;}</style>    
     <body style="font-family: 'Niramit', sans-serif;background-color: #f1f2f7;">
 
         <?php include 'app/Views/templates/dashboard.php'?>
 
-        <div class="container mt-5">
+        <div class="container mt-5 mb-5">
             <section class="row">
                 <div class="col-md-3">
                     <div class="card text-success">
@@ -71,17 +71,47 @@
                 </div>                                                
             </section>
 
+            <div class="card mt-5">
+                <div class="card-header">
+                    <i class="fas fa-chart-line"></i>
+                    Relatório Geral de Vendas
+                </div>
+                <div class="card-body"></div>
+                <div class="card-footer text-right">
+                    <button class="btn btn-info">
+                        Exportar Relatório
+                        <i class="fas"></i>
+                    </button>                    
+                </div>
+            </div>
+
             <div class="row mt-5">
                 <div class="col">
                     <div class="card">
-                        <div class="card-header"></div>
+                        <div class="card-header">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
                         <div class="card-body"></div>
+                        <div class="card-footer text-right">
+                            <button class="btn btn-info">
+                                Exportar Relatório
+                                <i class="fas"></i>
+                            </button>                    
+                        </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card">
-                        <div class="card-header"></div>
+                        <div class="card-header">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
                         <div class="card-body"></div>
+                        <div class="card-footer text-right">
+                            <button class="btn btn-info">
+                                Exportar Relatório
+                                <i class="fas"></i>
+                            </button>                    
+                        </div>
                     </div>
                 </div>
             </div>
