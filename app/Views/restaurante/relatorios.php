@@ -78,9 +78,9 @@
                 </div>
                 <div class="card-body"></div>
                 <div class="card-footer text-right">
-                    <button class="btn btn-info">
+                    <button class="btn btn-info" type="button">
                         Exportar Relatório
-                        <i class="fas"></i>
+                        <i class="fas fa-file-export"></i>
                     </button>                    
                 </div>
             </div>
@@ -93,9 +93,9 @@
                         </div>
                         <div class="card-body"></div>
                         <div class="card-footer text-right">
-                            <button class="btn btn-info">
+                            <button class="btn btn-info" type="button">
                                 Exportar Relatório
-                                <i class="fas"></i>
+                                <i class="fas fa-file-export"></i>
                             </button>                    
                         </div>
                     </div>
@@ -107,9 +107,9 @@
                         </div>
                         <div class="card-body"></div>
                         <div class="card-footer text-right">
-                            <button class="btn btn-info">
+                            <button class="btn btn-info" type="button">
                                 Exportar Relatório
-                                <i class="fas"></i>
+                                <i class="fas fa-file-export"></i>
                             </button>                    
                         </div>
                     </div>

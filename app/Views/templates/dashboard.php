@@ -26,7 +26,7 @@
         <div class="border ml-3"></div>
         <div class="nav-item" data-html="true" data-tooltip="tooltip" data-placement="bottom" title="Status de Delivery">
             <span class="nav-link">                
-                <?php $status = $restaurant->Select('status') ?>
+                <?php $status = $restaurant->Select('delivery_status') ?>
                 <?php switch ($status) {
                     case '1': ?>
                         <i class="fas fa-circle" style="color: #FF0000"></i>            
@@ -56,7 +56,7 @@
                 <i class="fas fa-caret-down"></i>
             </span> 
             <div class="dropdown-content dropdown-menu-right text-center p-1">
-                <?php $status = $restaurant->Select('status') ?>
+                <?php $status = $restaurant->Select('delivery_status') ?>
                 <?php switch ($status) {
                     case '1': ?>
                         <a class="dropdown-item" href="logout" data-toggle="modal" data-target="#">

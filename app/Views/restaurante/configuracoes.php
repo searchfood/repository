@@ -36,8 +36,8 @@
                             Menu
                         </div>
                         <div class="card-body p-0">
-                            <div id="list-example" class="list-group">
-                                <a class="list-group-item list-group-item-action scroll text-truncate" href="#navbar" >
+                            <div id="list-example" class="list-group">                
+                                <a class="list-group-item list-group-item-action scroll text-truncate" href="#navbar">
                                     <img width="19" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPlSURBVGhD7ZhbiE1xFMZHSMatJLlELqNhysycmTPTmNQ8KAmFmFxTCuUBiQeKPBDKRJPIpTyIRyEP4oGR8qAITx4k44FyS8ilhvFb+6z/v3X2+R9iDLuZ/dXX3uf7vrX3Wvt29jklPRoNDQ3Ds9nspKQxk8mM0RZ/jZqamlO1tbWdSSX93WlsbByi7YZBcGq8MIlkmLXachiEZsaLEsrt2nIYTNoQKEoc6XObthxGRUXFYIIv44UJ43du/DptuTgIlTPxAQpOJI301cqTa5a22kvA1JOZfqeclQRyD1dMo7ZaHPX19UMZItH3CMN0MExGWw6D629GqDhpZJit2nIYhHrG9wiBhbGCRJIzckhbDoPAuVBh0kif7bTbJ9d1DJWVlYMIfXRh7pdV8sbpSHH8W3+19fncbH3y860vRHtv/Bbrsb9p6N+dDzdan/xs4wlnauv5ILjChVj/xKv8QLUisKM5ZiOdVVVVY9WKgLbA+mxjuloe6O+M36KyB9oT4+9X2QOt3fjHVM4HxiUTuqqyB/pO479R2YNB1zhfyFEsV8uDuucmc1plj1gP11T2QDtm/Fcs+6uVg/yQQvzqQnCLWh4UXjD+TZU98LcaXzheLQ8y9oheVNkDba/xX6vsgT7X+ZqZp1YOCOttoLq6ukItDzLPzAYKTiv6PucLOSPj1PKg7rHJ3FbZg7O61PidfEFPVCtCWVnZAPQPzmd7Z9TKAeGGMeWJkAceBCOdr5kNanmgxX9ZDlPLg8xD57P+SGUPOYCmXg7GYrU8qPNXBuvy8CiNDI7CGD58cyY8GRkG8RsdFjwx0M7HMgWDoD0w/kuVPZqamvqhf3EZGg3d8GudL5Sz6IzN1uAoLIsMA3R/oytDR9ufVWFzc3NftTzI3HI+6x0q5wHvvsvAKyp71NXVjTK+8HxkyOmzBjvYFBkG6JdtJn7tCtCf2gyP5wlqebBtf7MrQw8Eey8WXOb0K99ZdhuH1YqK18EjcAd8wbU6RS1pcAm0X1Syg+NqR0Bbbn3N5D0QQhl4VO0I1KwMZJarLegj+0aTH1oHWd/NMnePWCBGL40EPsPr8J58DhGvDe5i/Sy095jNyDa6mhHtrGRgm2q/fGnsMW+/6SD/mL18EG4y+Z0ir+m/TWpbWYa2uZ9lsMZRbnCWBbXwj8/Izwt/AprxPw8s0fNf+AIg92f9EEgHKYZ0EEAuHSQdpBjSQQC5dJCePQg77Y5XlP9yRv4600Fy7CWDZLPZTKCoW9iVQagt+KcnD4T6E7obL+wOdmGQt6G/owpAsFR2wjL4FPpbZB+jdZdFQW5ErGaR/EGndooEo6TkB4pLnXfKZUqYAAAAAElFTkSuQmCC">
                                     Dados do Restaurante
                                 </a>
@@ -179,7 +179,7 @@
                                 </span>                    
                             </div>
                             <div class="card-body p-0">
-                                <form action="" method="post" id="form-owner">
+                                <form action="<?=URL?>/restaurante/configuracoes" method="post" id="form-owner">
                                     <div class="row px-3 pt-3">
                                         <div class="col">
                                             <div class="form-group">
@@ -207,13 +207,15 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label for="owner_phone">Telefone do Proprietário:</label>
-                                                <input type="text" name="owner_phone" id="owner_phone" class="form-control" placeholder="Telefone do Proprietário" aria-describedby="error_owner_phone" value="<?= $restaurant->Select('ower_phone') ?>">
+                                                <input type="text" name="owner_phone" id="owner_phone" class="form-control" placeholder="Telefone do Proprietário" aria-describedby="error_owner_phone" value="<?= $restaurant->Select('owner_phone') ?>">
                                                 <small id="error_owner_phone" class="text-danger"></small>
                                             </div>
                                         </div>
                                     </div>
+                                    <input type="hidden" name="restaurant_id" value="2">
+                                    <input type="hidden" name="restaurant_action" value="update_owner_data">
                                     <div class="card-footer text-right">
-                                        <button class="btn btn-success" type="button">                                            
+                                        <button class="btn btn-success" type="submit">                                            
                                             Salvar Dados do Proprietário
                                             <i class="fas fa-paper-plane"></i>
                                         </button> 
@@ -293,5 +295,10 @@
             $(function () {$('[data-toggle="popover"]').popover()})
             $(function () {$('[data-tooltip="tooltip"]').tooltip()})
         </script>
+
+        <!--Mask JS-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
+        <script src="<?=URL?>/public/js/mask.js"></script>
     </body>
 </html>

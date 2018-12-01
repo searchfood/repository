@@ -28,9 +28,26 @@ class Restaurants
         return $result;
     }
 
-    public function Update($values, $id)
+    public function Update($data, $values)
     {
-        
+        switch ($data) {
+            case 'owner_data':            
+                $sql =  "UPDATE `restaurants` SET" . 
+                        "`owner_name` = '" . $values['owner_name'] . "', `owner_email` = '" . $values['owner_email'] . "', `cpf` = '"    . $values['cpf'] . "', `owner_phone` = '" . $values['owner_phone'] . "' WHERE `restaurant`.`id` = " . $values['restaurant_id']. "";
+                break;
+            
+            default:
+                # code...
+                break;
+        }
+
+        $result = mysqli_query($this->db, $sql) or die($this->bd->error);
+
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function Delete($id)
