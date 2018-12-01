@@ -31,9 +31,21 @@ class Restaurants
     public function Update($data, $values)
     {
         switch ($data) {
+            case 'restaurant_data':            
+                $sql =  "UPDATE `restaurants` SET"                                         . 
+                        // "   `owner_name`                = '"    . $values['owner_name']    . 
+                        // "', `owner_email`               = '"    . $values['owner_email']   . 
+                        // "', `cpf`                       = '"    . $values['cpf']           . 
+                        // "', `owner_phone`               = '"    . $values['owner_phone']   . 
+                        "' WHERE `restaurants`.`id`     = "     . $values['restaurant_id'];
+                break;
             case 'owner_data':            
-                $sql =  "UPDATE `restaurants` SET" . 
-                        "`owner_name` = '" . $values['owner_name'] . "', `owner_email` = '" . $values['owner_email'] . "', `cpf` = '"    . $values['cpf'] . "', `owner_phone` = '" . $values['owner_phone'] . "' WHERE `restaurant`.`id` = " . $values['restaurant_id']. "";
+                $sql =  "UPDATE `restaurants` SET"                                         . 
+                        "   `owner_name`                = '"    . $values['owner_name']    . 
+                        "', `owner_email`               = '"    . $values['owner_email']   . 
+                        "', `cpf`                       = '"    . $values['cpf']           . 
+                        "', `owner_phone`               = '"    . $values['owner_phone']   . 
+                        "' WHERE `restaurants`.`id`     = "     . $values['restaurant_id'];
                 break;
             
             default:
