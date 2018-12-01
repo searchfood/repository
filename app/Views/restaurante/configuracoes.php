@@ -158,8 +158,10 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <input type="hidden" name="restaurant_id" value="2">
+                                    <input type="hidden" name="restaurant_action" value="update_restaurant_data">
                                     <div class="card-footer text-right">
-                                        <button class="btn btn-success" type="button">                                            
+                                        <button class="btn btn-success" type="submit">                                            
                                             Salvar Dados do Restaurante
                                             <i class="fas fa-paper-plane"></i>
                                         </button>                                    
@@ -288,13 +290,14 @@
     
         <!-- JS Files -->        
         <script src="<?=URL?>/public/js/min/scroll.min.js"></script>
+        <script src="<?=URL?>/public/js/to-top.js"></script>
 
         <!-- JS Code -->
         <script type="text/javascript">
             $("body").scrollspy({target:"#list-example"}),$(function(){var i=$("#menu");$(window).scroll(function(){$(this).scrollTop()>i.scrollTop()+180?i.css({position:"fixed",top:"2%",width:"20%"}):i.css({position:"",top:"",width:""})}),$(window).ready(function(){$(this).scrollTop()>i.scrollTop()+180?i.css({position:"fixed",top:"2%",width:"20%"}):i.css({position:"",top:"",width:""})})}),$(document).ready(function(){function i(i){if(i.files&&i.files[0]){var t=new FileReader;t.onload=function(i){$("#img-upload").attr("src",i.target.result)},t.readAsDataURL(i.files[0])}}$(document).on("change",".btn-file :file",function(){var i=$(this),t=i.val().replace(/\\/g,"/").replace(/.*\//,"");i.trigger("fileselect",[t])}),$(".btn-file :file").on("fileselect",function(i,t){var o=$(this).parents(".input-group").find(":text"),e=t;o.length&&o.val(e)}),$("#imgInp").change(function(){i(this)})});
             $(function () {$('[data-toggle="popover"]').popover()})
             $(function () {$('[data-tooltip="tooltip"]').tooltip()})
-        </script>
+        </script>        
 
         <!--Mask JS-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

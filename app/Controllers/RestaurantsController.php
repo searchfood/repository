@@ -14,6 +14,9 @@ class RestaurantsController
         
         if (isset($_POST['restaurant_action'])) {
             switch ($_POST['restaurant_action']) {
+                case 'update_restaurant_data':
+                    $this->Update('restaurant_data');
+                    break;
                 case 'update_owner_data':
                     $this->Update('owner_data');
                     break;

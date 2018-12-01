@@ -139,6 +139,10 @@
     <span></span>
 </nav>
 
+<span title="Ir para o Topo" data-tooltip="tooltip" data-placement="top" class="btn text-white toTop">
+    <i style="font-size: 30px" class="fas fa-angle-double-up"></i>
+</span>
+
 <!-- Modal Sair-->
 <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
