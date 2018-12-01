@@ -28,16 +28,20 @@ class Restaurants
         return $result;
     }
 
-    public function Update($data, $values)
+    public function Update($data, $values, $upload)
     {
         switch ($data) {
             case 'restaurant_data':            
-                // $sql =  "UPDATE `restaurants` SET"                                         . 
-                //         "   `restaurant_name`                = '"    . $values['restaurant_name']    . 
-                //         "', `cnpj`               = '"    . $values['cnpj']   . 
-                //         "', `cpf`                       = '"    . $values['cpf']           . 
-                //         "', `owner_phone`               = '"    . $values['owner_phone']   . 
-                //         "' WHERE `restaurants`.`id`     = "     . $values['restaurant_id'];
+                $sql =  "UPDATE `restaurants` SET"                                           . 
+                        "   `restaurant_name`           = '"    . $values['restaurant_name'] . 
+                        "', `cnpj`                      = '"    . $values['cnpj']            . 
+                        "', `address`                   = '"    . $values['address']         . 
+                        "', `neighborhood`              = '"    . $values['neighborhood']    . 
+                        "', `city`                      = '"    . $values['city']            . 
+                        "', `state`                     = '"    . $values['state']           . 
+                        "', `cep`                       = '"    . $values['cep']             . 
+                        "', `profile_picture`           = '"    . $upload                    . 
+                        "' WHERE `restaurants`.`id`     = "     . $values['restaurant_id'];
                 break;
             case 'owner_data':            
                 $sql =  "UPDATE `restaurants` SET"                                         . 

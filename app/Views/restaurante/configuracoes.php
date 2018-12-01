@@ -25,7 +25,7 @@
     <style>.card {-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.10);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.10);box-shadow: 0 1px 2px rgba(0,0,0,.10);border: 1px solid rgba(0,0,0,.2);border-radius: 0;color: black;}.card-header{font-size: 20px;}#nav-tabContent .card .card-header{border-bottom: 2px solid #d20911;font-size: 22px}.card-footer{border-top: 2px solid #d20911;}.list-group-item.active{background-color: #f1f2f7;color: black;border: 1px solid #d20911;border-left: 5px solid #d20911;border-radius: 0;}.form-control, .btn {border-radius: 2rem;}</style>    
     <body style="font-family: 'Niramit', sans-serif;background-color: #f1f2f7;" data-spy="scroll" data-target="#list-example">
 
-        <?php include 'app/Views/templates/dashboard.php'?>
+        <?php include 'app/Views/templates/dashboard.php'?>        
 
         <div class="container mt-5 mb-5" id="topo">
             <div class="row">
@@ -78,7 +78,11 @@
                                         <div class="col-4">
                                             <div class="form-group">
                                                 <label>Foto/Logo: <small>(Opicional)</small></label>
-                                                <img class="img-fluid" id='img-upload'/>
+                                                <?php if ($restaurant->Select('profile_picture')) { ?>
+                                                    <img class="img-fluid" id='img-upload' src="<?=URL?>/public/img/upload/restaurants/<?=$restaurant->Select('profile_picture')?>"/>
+                                                <?php } else { ?>
+                                                    <img class="img-fluid" id='img-upload' src=""/>
+                                                <?php } ?>                                                
                                                 <div class="input-group">
                                                     <span class="btn btn-default btn-file btn-block">
                                                         <button class="btn btn-primary">
