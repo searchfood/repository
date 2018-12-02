@@ -30,7 +30,7 @@ class RestaurantsController
 
     public function Select($col)
     {
-        $result = $this->model->Select('2');
+        $result = $this->model->Select('1');
 
         $row = $result->fetch_assoc();
 
@@ -51,17 +51,27 @@ class RestaurantsController
         switch ($upload) {
             case 'restaurant_upload':
                 if (isset($_FILES['profile_picture'])) {
+                    
                     $extension = strtolower(substr($_FILES['profile_picture']['name'], -4));
-                    $new_name = md5(time()) . $extension;
-                    $directory = "public/img/upload/restaurants/";            
-                    
-                    if ($this->model->Update('restaurant_data', $_POST, $new_name)) {
-                        move_uploaded_file($_FILES['profile_picture']['tmp_name'], $directory . $new_name);
-                        echo 'Ok';
+                    if ($extension != "") {
+                        $new_name = md5(time()) . $extension;
+                        $directory = "public/img/upload/restaurants/";            
+                        
+                        if ($this->model->Update('restaurant_data', $_POST, $new_name)) {
+                            if (condition) {
+                                # code...
+                            } else {
+                                # code...
+                            }
+                            
+                            move_uploaded_file($_FILES['profile_picture']['tmp_name'], $directory . $new_name);
+                            echo 'Ok';
+                        } else {
+                            echo 'Erro';
+                        }
                     } else {
-                        echo 'Erro';
-                    }
-                    
+                        $this->model->Update('restaurant_data', $_POST, $this->Select('profile_picture'));
+                    }                                    
                 } else {
 
                 }

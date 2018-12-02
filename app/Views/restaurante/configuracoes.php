@@ -79,6 +79,7 @@
                                             <div class="form-group">
                                                 <label>Foto/Logo: <small>(Opicional)</small></label>
                                                 <?php if ($restaurant->Select('profile_picture')) { ?>
+                                                    <i class="fas fa-remove"></i>
                                                     <img class="img-fluid" id='img-upload' src="<?=URL?>/public/img/upload/restaurants/<?=$restaurant->Select('profile_picture')?>"/>
                                                 <?php } else { ?>
                                                     <img class="img-fluid" id='img-upload' src=""/>
@@ -105,7 +106,7 @@
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="cnpj">CNPJ:</label>
-                                                        <input type="text" name="cnpj" id="cnpj" class="form-control" placeholder="CNPJ" aria-describedby="error_cnpj" value="<?= $restaurant->Select('cnpj') ?>">
+                                                        <input type="text" name="cnpj" id="cnpj" class="form-control" placeholder="CNPJ" aria-describedby="error_cnpj" value="<?= $restaurant->Select('cnpj') ?>" readonly>
                                                         <small id="error_cnpj" class="text-danger"></small>
                                                     </div>
                                                 </div>
@@ -162,7 +163,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <input type="hidden" name="restaurant_id" value="2">
+                                    <input type="hidden" name="restaurant_id" value="1">
                                     <input type="hidden" name="restaurant_action" value="update_restaurant_data">
                                     <div class="card-footer text-right">
                                         <button class="btn btn-success" type="submit">                                            
@@ -206,7 +207,7 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label for="cpf">CPF:</label>
-                                                <input type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" aria-describedby="error_cpf" value="<?= $restaurant->Select('cpf') ?>">
+                                                <input type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" aria-describedby="error_cpf" value="<?= $restaurant->Select('cpf') ?>" readonly>
                                                 <small id="error_cpf" class="text-danger"></small>
                                             </div>
                                         </div>
@@ -218,7 +219,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <input type="hidden" name="restaurant_id" value="2">
+                                    <input type="hidden" name="restaurant_id" value="1">
                                     <input type="hidden" name="restaurant_action" value="update_owner_data">
                                     <div class="card-footer text-right">
                                         <button class="btn btn-success" type="submit">                                            

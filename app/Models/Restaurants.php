@@ -33,8 +33,7 @@ class Restaurants
         switch ($data) {
             case 'restaurant_data':            
                 $sql =  "UPDATE `restaurants` SET"                                           . 
-                        "   `restaurant_name`           = '"    . $values['restaurant_name'] . 
-                        "', `cnpj`                      = '"    . $values['cnpj']            . 
+                        "   `restaurant_name`           = '"    . $values['restaurant_name'] .                          
                         "', `address`                   = '"    . $values['address']         . 
                         "', `neighborhood`              = '"    . $values['neighborhood']    . 
                         "', `city`                      = '"    . $values['city']            . 
@@ -46,8 +45,7 @@ class Restaurants
             case 'owner_data':            
                 $sql =  "UPDATE `restaurants` SET"                                         . 
                         "   `owner_name`                = '"    . $values['owner_name']    . 
-                        "', `owner_email`               = '"    . $values['owner_email']   . 
-                        "', `cpf`                       = '"    . $values['cpf']           . 
+                        "', `owner_email`               = '"    . $values['owner_email']   .                          
                         "', `owner_phone`               = '"    . $values['owner_phone']   . 
                         "' WHERE `restaurants`.`id`     = "     . $values['restaurant_id'];
                 break;
