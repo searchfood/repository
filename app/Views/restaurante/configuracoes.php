@@ -163,7 +163,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <input type="hidden" name="restaurant_id" value="1">
+                                    <input type="hidden" name="restaurant_id" value="<?=$_SESSION['restaurant']?>">
                                     <input type="hidden" name="restaurant_action" value="update_restaurant_data">
                                     <div class="card-footer text-right">
                                         <button class="btn btn-success" type="submit">                                            
@@ -186,7 +186,7 @@
                                 </span>                    
                             </div>
                             <div class="card-body p-0">
-                                <form action="<?=URL?>/restaurante/configuracoes" method="post" id="form-owner">
+                                <form action="" method="post" id="form-owner">
                                     <div class="row px-3 pt-3">
                                         <div class="col">
                                             <div class="form-group">
@@ -219,7 +219,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <input type="hidden" name="restaurant_id" value="1">
+                                    <input type="hidden" name="restaurant_id" value="<?=$_SESSION['restaurant']?>">
                                     <input type="hidden" name="restaurant_action" value="update_owner_data">
                                     <div class="card-footer text-right">
                                         <button class="btn btn-success" type="submit">                                            

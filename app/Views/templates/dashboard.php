@@ -6,6 +6,14 @@
     $restaurant = new RestaurantsController();
     $category = new CategoriesController();
     $menu = new MenusController();
+
+    if (!isset($_SESSION['restaurant'])){
+        $restaurant->redirect(URL.'/restaurante/login');
+    } else {
+        if (isset($route->Link) && $route->Link == 'logout'){
+            $restaurant->close_session();
+        }
+    }
 ?>
 <!--Estrutura do Template-->
 <nav id="navbar" class="navbar navbar-dark bg-dark">

@@ -68,4 +68,23 @@ class Restaurants
     {
         
     }
+
+    public function Auth($email, $password, $table)
+    {
+        $encrypted_password = md5($password);
+
+        if ($table == 'restaurants') {
+            $sql = "SELECT * FROM `restaurants` WHERE `email` = '$email' AND `password` = '$encrypted_password'";
+        } else if ($table == 'contributors') {
+            $sql = "SELECT * FROM `contributors` WHERE `email` = '$email' AND `password` = '$encrypted_password'";
+        }
+                
+        $result = mysqli_query($this->db, $sql);
+
+        if (mysqli_num_rows($result) == 1) {
+            return $result;
+        } else {
+            return false;
+        }
+    }
 }

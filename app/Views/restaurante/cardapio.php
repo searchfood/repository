@@ -38,9 +38,9 @@
                                 <i class="fas fa-plus"></i>
                             </button>
                         </div>
-                        <?php if ($category->Select('1')) { ?>
+                        <?php if ($category->Select($_SESSION['restaurant'])) { ?>
                         <div class="card-body p-0">
-                            <?php $categories = $category->Select('1'); ?>
+                            <?php $categories = $category->Select($_SESSION['restaurant']); ?>
                             <div class="list-group" id="list-tab" role="tablist">
                                 <?php for ($i=0; $i < mysqli_num_rows($categories); $i++) { ?>
                                     <?php $row_category = mysqli_fetch_assoc($categories); ?>
@@ -97,8 +97,8 @@
                 </div>
                 <div class="col-8">
                     <div class="tab-content" id="nav-tabContent">
-                        <?php if ($category->Select('1')) { ?>                      
-                            <?php $categories = $category->Select('1'); ?>    
+                        <?php if ($category->Select($_SESSION['restaurant'])) { ?>                      
+                            <?php $categories = $category->Select($_SESSION['restaurant']); ?>    
                             <?php for ($i = 0; $i < mysqli_num_rows($categories); $i++) {  ?>                                 
                                 <?php $row_category = $categories->fetch_assoc(); ?> 
                                 <?php if ($i == 0) { ?>                                                                                                                            
@@ -170,7 +170,7 @@
                             </div>                            
                         </div>
                         <input type="hidden" name="category_action" value="insert">
-                        <input type="hidden" name="restaurant_id" value="1">
+                        <input type="hidden" name="restaurant_id" value="<?=$_SESSION['restaurant']?>">
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                             <button type="submit" class="btn btn-success">Salvar</button>
