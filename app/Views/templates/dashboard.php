@@ -2,13 +2,16 @@
     use app\Controllers\RestaurantsController;
     use app\Controllers\CategoriesController;
     use app\Controllers\MenusController;
+    use app\Controllers\AlertsController;
 
     $restaurant = new RestaurantsController();
     $category = new CategoriesController();
     $menu = new MenusController();
+    $alert = new AlertsController();
 
-    if (!isset($_SESSION['restaurant'])){
-        $restaurant->redirect(URL.'/restaurante/login');
+    if (!isset($_SESSION['restaurant']) && !isset($_SESSION['contributors'])){
+        $alert->setAlert('Usuário não autenticado!', NULL);
+        $restaurant->redirect(URL.'/restaurante/login');        
     } else {
         if (isset($route->Link) && $route->Link == 'logout'){
             $restaurant->close_session();

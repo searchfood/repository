@@ -3,14 +3,18 @@
 namespace app\Controllers;
 
 use app\Models\Restaurants;
+use app\Controllers\ContributorsController;
 
 class RestaurantsController
 {
     private $model;
+    private $contributor;
 
     public function __construct()
     {
-        $this->model = new Restaurants();  
+        $this->model = new Restaurants(); 
+        $this->contributor = new ContributorsController();
+        
         session_start();        
         
         if (isset($_POST['restaurant_action'])) {
@@ -85,15 +89,12 @@ class RestaurantsController
 
     public function Auth()
     {
-        if ($this->model->Auth($_POST['email'], $_POST['password'], 'restaurants')) {
-            $row = $this->model->Auth($_POST['email'], $_POST['password'], 'restaurants')->fetch_assoc();
+        if ($this->model->Auth($_POST['email'], $_POST['password'])) {
+            $row = $this->model->Auth($_POST['email'], $_POST['password'])->fetch_assoc();
             $_SESSION['restaurant'] = $row['id'];
             $this->redirect(URL.'/restaurante/dashboard');
         } else {
-            // $row = $this->model->Auth($_POST['email'], $_POST['password'], 'contributors')->fetch_assoc();
-            // $_SESSION['contributors'] = $row['id'];
-            // $_SESSION['restaurant'] = $row['restaurant_id'];
-            // $this->redirect(URL.'/restaurante/dashboard');
+            $this->contributor->Auth($_POST['email'], $_POST['password']);
         }
         
     }
