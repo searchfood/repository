@@ -43,14 +43,14 @@
             <div class="card bg-light">
                 <div class="card-body">
                     <!-- Alert -->
-                    <div class="alert text-white alert-dismissible fade show mb-0" role="alert">
+                    <!-- <div class="alert text-white alert-dismissible fade show mb-0" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                             <span class="sr-only">Close</span>
                         </button>
                         <?php $array = $alert->getAlert(); ?>
                         <?= $array['alert'] ?>
-                    </div>
+                    </div> -->
                     <h2 class="text-center pt-4">
                         Acessar Painel
                     </h2>

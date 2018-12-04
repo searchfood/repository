@@ -91,7 +91,7 @@
                 } ?>
                 <hr class="m-0">
                 <a class="dropdown-item" href="logout" data-toggle="modal" data-target="#logoutModal">
-                    Encerrar Sessão <i class="fas fa-sign-out-alt"></i> 
+                    Sair <i class="fas fa-sign-out-alt"></i> 
                 </a>
             </div>
         </div>                
