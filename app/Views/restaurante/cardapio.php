@@ -22,7 +22,7 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     </head>
-    <style>.card {-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.10);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.10);box-shadow: 0 1px 2px rgba(0,0,0,.10);border: 1px solid rgba(0,0,0,.2);border-radius: 0;color: black;}.card-header{font-size: 22px;border-bottom: 2px solid #d20911;}#category_menu{border-bottom: none}.card-footer{background-color: #fff;}.form-control, .btn {border-radius: 2rem;}.list-group .active {background-color: #fff;color: black;border: 1px solid #FF0000;border-left: 5px solid #FF0000;border-radius: 0}</style>
+    <style>.card {-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.10);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.10);box-shadow: 0 1px 2px rgba(0,0,0,.10);border: 1px solid rgba(0,0,0,.2);border-radius: 0;color: black;}.card-header{font-size: 22px;border-bottom: 2px solid #d20911;}#category_menu{border-bottom: none}.card-footer{border-top: 2px solid #d20911;}.form-control, .btn {border-radius: 2rem;}.list-group .active {background-color: #fff;color: black;border: 1px solid #FF0000;border-left: 5px solid #FF0000;border-radius: 0}</style>
     <body style="font-family: 'Niramit', sans-serif;background-color: #f1f2f7;">
 
         <?php include 'app/Views/templates/dashboard.php'?>
@@ -111,6 +111,16 @@
                                             <div class="card-body">
                                             
                                             </div>
+                                            <div class="card-footer text-right">
+                                                <button class="btn btn-info">
+                                                    Editar Categoria
+                                                    <i class="fas fa-pen ml-1"></i>
+                                                </button>
+                                                <button class="btn btn-danger">
+                                                    Excluir Categoria
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 <?php } else { ?>                                  
@@ -122,6 +132,16 @@
                                             </div>
                                             <div class="card-body">
                                             
+                                            </div>
+                                            <div class="card-footer text-right">
+                                                <button class="btn btn-info">
+                                                    Editar Categoria
+                                                    <i class="fas fa-pen ml-1"></i>
+                                                </button>
+                                                <button class="btn btn-danger">
+                                                    Excluir Categoria
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>                 

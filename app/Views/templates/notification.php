@@ -1,4 +1,4 @@
-<div class="dropdown">
+<div class="dropdown" style="padding-top: 17px">
     <button style="background-color: transparent;border: none;padding-top: 10px" class="btn px-1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i style="font-size: 20px" class="fas fa-bell text-white"></i>
         <span style="float: right;font-size: 12px;" class="badge badge-light badge-pill"></span>

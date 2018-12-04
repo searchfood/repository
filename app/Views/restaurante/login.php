@@ -4,6 +4,8 @@
 
     $restaurant = new RestaurantsController();
     $alert = new AlertsController();
+
+    $alert->setAlert('Usuário não autenticado!', NULL);
 ?>
 <!doctype html>
 <html lang="pt-BR">

@@ -10,8 +10,7 @@
     $alert = new AlertsController();
 
     if (!isset($_SESSION['restaurant']) && !isset($_SESSION['contributors'])){
-        $alert->setAlert('Usuário não autenticado!', NULL);
-        $restaurant->redirect(URL.'/restaurante/login');        
+        $restaurant->redirect(URL.'/restaurante/login');       
     } else {
         if (isset($route->Link) && $route->Link == 'logout'){
             $restaurant->close_session();
@@ -19,8 +18,8 @@
     }
 ?>
 <!--Estrutura do Template-->
-<nav id="navbar" class="navbar navbar-dark bg-dark">
-    <span class="navbar-brand mb-0 h1 mr-0">
+<nav id="navbar" class="navbar navbar-dark bg-dark py-0">
+    <span class="navbar-brand mb-0 h1 mr-0 py-2">
         <img height="55" src="<?=URL?>/public/img/logo/logo.png" alt="">
         <span id="logo-text">Search Food</span>
     </span>
@@ -34,8 +33,8 @@
 
         <?php include 'app/Views/templates/notification.php' ?>
 
-        <div class="border ml-3"></div>
-        <div class="nav-item" data-html="true" data-tooltip="tooltip" data-placement="bottom" title="Status de Delivery">
+        <div class="ml-2" style="height: 70px;border: 1px solid #5a626b"></div>
+        <div style="padding-top: 17px" class="nav-item" data-html="true" data-tooltip="tooltip" data-placement="bottom" title="Status de Delivery">
             <span class="nav-link">                
                 <?php $status = $restaurant->Select('delivery_status') ?>
                 <?php switch ($status) {
@@ -57,8 +56,8 @@
                 } ?>
             </span> 
         </div>
-        <div class="border"></div>
-        <div class="dropdown nav-item">
+        <div style="height: 70px;border: 1px solid #5a626b"></div>
+        <div style="padding-top: 17px" class="dropdown nav-item">
             <span style="cursor: pointer" class="nav-link text-white">
                 <i class="fas fa-user-alt"></i>
                 <?php $owner_name = $restaurant->Select('owner_name') ?>
@@ -92,55 +91,54 @@
                 } ?>
                 <hr class="m-0">
                 <a class="dropdown-item" href="logout" data-toggle="modal" data-target="#logoutModal">
-                    Sair <i class="fas fa-sign-out-alt"></i> 
+                    Encerrar Sessão <i class="fas fa-sign-out-alt"></i> 
                 </a>
             </div>
         </div>                
     </ul>
 </nav>
-<nav class="navbar navbar-danger">
+<nav class="navbar navbar-danger p-0">
     <span></span>
     <ul class="nav justify-content-center">
-        <li class="nav-item">
+        <li class="nav-item py-1">
             <a class="nav-link" href="<?=URL?>/restaurante/dashboard">
                 <i class="fas fa-desktop"></i>
                 Dasboard
             </a>
-        </li>    
-        <li class="nav-item">
+        </li>            
+        <li class="nav-item py-1">
             <a class="nav-link" href="<?=URL?>/restaurante/pedidos">
                 <i class="fas fa-shopping-basket"></i>
                 Pedidos
             </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item py-1">
             <a class="nav-link" href="<?=URL?>/restaurante/cardapio">
                 <i class="far fa-list-alt"></i>
                 Cardápio
             </a>
         </li>
-        <li class="nav-item border">
-        </li>
-        <li class="nav-item">
+        <li class="nav-item" style="border: 1px solid #dc4c52"></li>
+        <li class="nav-item py-1">
             <a class="nav-link" href="<?=URL?>/restaurante/configuracoes">
                 <i class="fas fa-wrench"></i>
                 Configurações
             </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item py-1">
             <a class="nav-link" href="<?=URL?>/restaurante/relatorios">
                 <i class="fas fa-chart-bar"></i>
                 Relatórios
             </a>
         </li>        
-        <li class="nav-item">
+        <li class="nav-item py-1">
             <a class="nav-link" href="<?=URL?>/restaurante/extensoes">
                 <i class="fas fa-sitemap"></i>
                 Extensões
             </a>
         </li>
-        <li class="nav-item border">
-        <li class="nav-item">
+        <li class="nav-item" style="border: 1px solid #dc4c52"></li>
+        <li class="nav-item py-1">
             <a class="nav-link" href="<?=URL?>/restaurante/ajuda">
                 <i class="fas fa-question-circle"></i>
                 Ajuda
@@ -150,9 +148,9 @@
     <span></span>
 </nav>
 
-<span title="Ir para o Topo" data-tooltip="tooltip" data-placement="top" class="btn text-white toTop">
+<!-- <span title="Ir para o Topo" data-tooltip="tooltip" data-placement="top" class="btn text-white toTop fixed">
     <i style="font-size: 30px" class="fas fa-angle-double-up"></i>
-</span>
+</span> -->
 
 <!-- Modal Sair-->
 <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" aria-hidden="true">

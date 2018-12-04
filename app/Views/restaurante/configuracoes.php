@@ -145,8 +145,8 @@
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="state">Estado:</label>
-                                                        <select class="form-control" name="state" id="state">
-                                                            <option value=""><?= $restaurant->Select('state') ?></option>
+                                                        <select class="form-control custom-select" name="state" id="state">
+                                                            
                                                         </select>
                                                         <small id="error_state" class="text-danger"></small>
                                                     </div>
@@ -154,8 +154,8 @@
                                                 <div class="col-5">
                                                     <div class="form-group">
                                                         <label for="city">Cidade:</label>
-                                                        <select class="form-control" name="city" id="city">
-                                                            <option value=""><?= $restaurant->Select('city') ?></option>
+                                                        <select class="form-control custom-select" name="city" id="city">
+                                                            
                                                         </select>
                                                         <small id="error_city" class="text-danger"></small>
                                                     </div>
@@ -308,5 +308,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
         <script src="<?=URL?>/public/js/mask.js"></script>
+
+        <script type="text/javascript">$(document).ready(function(){$.getJSON("<?=URL?>/public/js/estados_cidades.json",function(o){var t='<option value="<?=$restaurant->Select('state')?>"><?=$restaurant->Select('state')?></option>';$.each(o,function(o,n){t+='<option value="'+n.sigla+'">'+n.sigla+"</option>"}),$("#state").html(t),$("#state").change(function(){var t="",n="";t='<option value="<?=$restaurant->Select('city')?>"><?=$restaurant->Select('city')?></option>';$("#state option:selected").each(function(){n+=$(this).text()}),$.each(o,function(o,a){a.sigla==n&&$.each(a.cidades,function(o,n){t+='<option value="'+n+'">'+n+"</option>"})}),$("#city").html(t)}).change()})});</script>
     </body>
 </html>
