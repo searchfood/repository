@@ -107,16 +107,32 @@
                                             <div class="card-header">
                                                 <i class="fas fa-tag"></i>
                                                 <?= $row_category['category_name'] ?>
+                                                <button type="button" data-toggle="modal" data-target="#addMenu" class="btn btn-success btn-sm" style="float: right" data-tooltip="tooltip" data-placement="top" title="Adicionar Novo Item">
+                                                    <i class="fas fa-plus"></i>
+                                                    Adicionar Novo Item
+                                                </button>
                                             </div>
-                                            <div class="card-body">
-                                            
-                                            </div>
+                                            <?php $num_itens = $menu->Select($row_category['id']) ?>
+                                            <?php if ($num_itens > 0) { ?>
+                                                <div class="card-body">
+                                                    
+                                                </div>
+                                            <?php } else { ?>
+                                                <div class="card-body">
+                                                    <p class="text-center text-muted mb-0 px-5">
+                                                        "Não há nenhum Item na categoria 
+                                                        <strong><?= $row_category['category_name'] ?></strong>.
+                                                        Click no botão do canto superior direito
+                                                        para adicionar um novo item nessa Categoria."                                                        
+                                                    </p>
+                                                </div>
+                                            <?php } ?>
                                             <div class="card-footer text-right">
-                                                <button class="btn btn-info">
+                                                <button data-toggle="modal" data-target="#updateCategory" class="btn btn-info btn-sm" data-tooltip="tooltip" data-placement="bottom" title="Editar Categoria">
                                                     Editar Categoria
                                                     <i class="fas fa-pen ml-1"></i>
                                                 </button>
-                                                <button class="btn btn-danger">
+                                                <button class="btn btn-danger btn-sm" data-tooltip="tooltip" data-placement="bottom" title="Excluir Categoria">
                                                     Excluir Categoria
                                                     <i class="fas fa-trash"></i>
                                                 </button>
@@ -129,16 +145,32 @@
                                             <div class="card-header">
                                                 <i class="fas fa-tag"></i>
                                                 <?= $row_category['category_name'] ?>
+                                                <button type="button" data-toggle="modal" data-target="#addMenu" class="btn btn-success btn-sm" style="float: right" data-tooltip="tooltip" data-placement="top" title="Adicionar Novo Item">
+                                                    <i class="fas fa-plus"></i>
+                                                    Adicionar Novo Item
+                                                </button>
                                             </div>
-                                            <div class="card-body">
-                                            
-                                            </div>
+                                            <?php $num_itens = $menu->Select($row_category['id']) ?>
+                                            <?php if ($num_itens > 0) { ?>
+                                                <div class="card-body">
+                                                
+                                                </div>
+                                            <?php } else { ?>
+                                                <div class="card-body">
+                                                    <p class="text-center text-muted mb-0 px-5">
+                                                        "Não há nenhum Item na categoria 
+                                                        <strong><?= $row_category['category_name'] ?></strong>.
+                                                        Click no botão do canto superior direito
+                                                        para adicionar um novo item nessa Categoria."                                                        
+                                                    </p>
+                                                </div>
+                                            <?php } ?>
                                             <div class="card-footer text-right">
-                                                <button class="btn btn-info">
+                                                <button data-toggle="modal" data-target="#updateCategory" class="btn btn-info btn-sm" data-tooltip="tooltip" data-placement="bottom" title="Editar Categoria">
                                                     Editar Categoria
                                                     <i class="fas fa-pen ml-1"></i>
                                                 </button>
-                                                <button class="btn btn-danger">
+                                                <button class="btn btn-danger btn-sm" data-tooltip="tooltip" data-placement="bottom" title="Excluir Categoria">
                                                     Excluir Categoria
                                                     <i class="fas fa-trash"></i>
                                                 </button>
@@ -172,6 +204,60 @@
                             </div>                            
                         </div>
                         <input type="hidden" name="category_action" value="insert">
+                        <input type="hidden" name="restaurant_id" value="<?=$_SESSION['restaurant']?>">
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-success">Salvar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal Editar nova Categoria -->
+        <div class="modal fade" id="updateCategory" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header" style="border-bottom: 2px solid #d20911">
+                        <h5 class="modal-title">Editar Categoria</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form action="" method="post">
+                        <div class="modal-body">                            
+                            <div class="form-group">
+                                <label for="category_name">Nome da Categoria:</label>
+                                <input type="text" name="category_name" id="category_name" class="form-control" placeholder="Nome da Categoria" aria-describedby="error_category_name">
+                                <small id="error_category_name" class="text-danger" style="float: right"></small>
+                            </div>                            
+                        </div>
+                        <input type="hidden" name="category_action" value="update">
+                        <input type="hidden" name="restaurant_id" value="<?=$_SESSION['restaurant']?>">
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-success">Salvar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal Adicionar novo Item -->
+        <div class="modal fade" id="addMenu" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header" style="border-bottom: 2px solid #d20911">
+                        <h5 class="modal-title">Adicionar Novo Item</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form action="" method="post">
+                        <div class="modal-body">                            
+                                                        
+                        </div>
+                        <input type="hidden" name="menu_action" value="insert">
                         <input type="hidden" name="restaurant_id" value="<?=$_SESSION['restaurant']?>">
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>

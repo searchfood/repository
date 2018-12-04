@@ -49,7 +49,7 @@
                 <div class="col">
                     <div class="card">
                         <div class="card-header">
-                            <i class="fas fa-file-alt"></i>
+                            <i class="fas fa-scroll"></i>
                             Detalhes do Pedido
                         </div>
                         <div class="card-body">
