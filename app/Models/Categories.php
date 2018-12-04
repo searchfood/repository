@@ -30,7 +30,7 @@ class Categories
 
     public function Select($id)
     {
-        $sql = "SELECT * FROM `categories` WHERE restaurant_id = '$id'";
+        $sql = "SELECT * FROM `categories` WHERE restaurant_id = '$id' ORDER BY id DESC";
 
         $result = mysqli_query($this->db, $sql);
 

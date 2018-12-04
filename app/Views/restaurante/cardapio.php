@@ -45,7 +45,7 @@
                                 <?php for ($i=0; $i < mysqli_num_rows($categories); $i++) { ?>
                                     <?php $row_category = mysqli_fetch_assoc($categories); ?>
                                     <?php if($i == 0) {?>
-                                        <a class="list-group-item list-group-item-action active" data-toggle="list" href="#<?= $row_category['id'] ?>" role="tab">
+                                        <a class="list-group-item list-group-item-action active" id="list-category<?= $row_category['id'] ?>-list" data-toggle="list" href="#list-category<?= $row_category['id'] ?>" role="tab" aria-controls="category<?= $row_category['id'] ?>">
                                             <?= $row_category['category_name'] ?>
                                             <?php $num_itens = $menu->Select($row_category['id']) ?>
                                             <?php if ($num_itens == 1) { ?>
@@ -63,7 +63,7 @@
                                             <?php } ?>
                                         </a>
                                     <?php } else { ?>
-                                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#<?= $row_category['id'] ?>" role="tab">
+                                        <a class="list-group-item list-group-item-action"id="list-category<?= $row_category['id'] ?>-list" data-toggle="list" href="#list-category<?= $row_category['id'] ?>" role="tab" aria-controls="category<?= $row_category['id'] ?>">
                                             <?= $row_category['category_name'] ?>
                                             <?php $num_itens = $menu->Select($row_category['id']) ?>
                                             <?php if ($num_itens == 1) { ?>
@@ -102,7 +102,7 @@
                             <?php for ($i = 0; $i < mysqli_num_rows($categories); $i++) {  ?>                                 
                                 <?php $row_category = $categories->fetch_assoc(); ?> 
                                 <?php if ($i == 0) { ?>                                                                                                                            
-                                    <div class="tab-pane active" id="<?= $row_category['id'] ?>" role="tabpanel">
+                                    <div class="tab-pane fade show active" id="list-category<?= $row_category['id'] ?>" role="tabpanel" aria-labelledby="list-category<?= $row_category['id'] ?>-list">
                                         <div class="card mb-5">
                                             <div class="card-header">
                                                 <i class="fas fa-tag"></i>
@@ -124,7 +124,7 @@
                                         </div>
                                     </div>
                                 <?php } else { ?>                                  
-                                    <div class="tab-pane" id="<?= $row_category['id'] ?>" role="tabpanel">
+                                    <div class="tab-pane fade" id="list-category<?= $row_category['id'] ?>" role="tabpanel" aria-labelledby="list-category<?= $row_category['id'] ?>-list">
                                         <div class="card mb-5">
                                             <div class="card-header">
                                                 <i class="fas fa-tag"></i>
@@ -147,28 +147,10 @@
                                     </div>                 
                                 <?php } ?>                  
                             <?php } ?>                  
-                        <?php } ?>
+                        <?php } ?>                        
                     </div>    
                 </div>
             </div>
-            <!-- <div class="row mt-5 pt-5 mb-5 pb-5">
-                <div class="col">
-                    <div class="list-group" id="myList" role="tablist">
-                        <a class="list-group-item list-group-item-action active" data-toggle="list" href="#home" role="tab">Home</a>
-                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#profile" role="tab">Profile</a>
-                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#messages" role="tab">Messages</a>
-                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#settings" role="tab">Settings</a>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="home" role="tabpanel">1</div>
-                        <div class="tab-pane" id="profile" role="tabpanel">2</div>
-                        <div class="tab-pane" id="messages" role="tabpanel">3</div>
-                        <div class="tab-pane" id="settings" role="tabpanel">...</div>
-                    </div>
-                </div>
-            </div>  -->
         </div>               
 
         <!-- Modal Adicionar nova Categoria -->
