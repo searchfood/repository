@@ -17,6 +17,9 @@ class CategoriesController
                 case 'insert':
                     $this->Insert($_POST); 
                     break;
+                case 'update':
+                    $this->Update($_POST); 
+                    break;
                 
                 default:  
                     // var_dump($_POST);               
@@ -48,6 +51,30 @@ class CategoriesController
             echo 'Categoria já existe!';
         }
         
+    }
+
+    public function Update($values)
+    {
+        $category = $this->model->Select($values['restaurant_id']);
+
+        if ($category != false) {
+            for ($i=0; $i < mysqli_num_rows($category); $i++) { 
+                $category_existing = $category->fetch_assoc();
+                if ($values['category_name_update'] == $category_existing['category_name']) {
+                    $exist = true;
+                }
+            }
+        }
+
+        if (!$exist) {
+            if ($this->model->Update($values['category_name_update'], $values['category_id'])){
+                echo 'Ok';
+            } else {
+                echo 'Erro';
+            }            
+        } else {
+            echo 'Categoria já existe!';
+        }                
     }
 
     public function Select($id)

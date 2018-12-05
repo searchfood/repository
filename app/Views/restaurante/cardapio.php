@@ -128,7 +128,7 @@
                                                 </div>
                                             <?php } ?>
                                             <div class="card-footer text-right">
-                                                <button data-toggle="modal" data-target="#updateCategory" class="btn btn-info btn-sm" data-tooltip="tooltip" data-placement="bottom" title="Editar Categoria">
+                                                <button data-category-name="<?=$row_category['category_name']?>" data-category-id="<?=$row_category['id']?>" data-toggle="modal" data-target="#updateCategory" class="btn btn-info btn-sm" data-tooltip="tooltip" data-placement="bottom" title="Editar Categoria">
                                                     Editar Categoria
                                                     <i class="fas fa-pen ml-1"></i>
                                                 </button>
@@ -166,7 +166,7 @@
                                                 </div>
                                             <?php } ?>
                                             <div class="card-footer text-right">
-                                                <button data-toggle="modal" data-target="#updateCategory" class="btn btn-info btn-sm" data-tooltip="tooltip" data-placement="bottom" title="Editar Categoria">
+                                                <button data-category-name="<?=$row_category['category_name']?>" data-category-id="<?=$row_category['id']?>" data-toggle="modal" data-target="#updateCategory" class="btn btn-info btn-sm" data-tooltip="tooltip" data-placement="bottom" title="Editar Categoria">
                                                     Editar Categoria
                                                     <i class="fas fa-pen ml-1"></i>
                                                 </button>
@@ -207,7 +207,7 @@
                         <input type="hidden" name="restaurant_id" value="<?=$_SESSION['restaurant']?>">
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                            <button type="submit" class="btn btn-success">Salvar</button>
+                            <button id="btn-insert-category" type="button" class="btn btn-success">Salvar</button>
                         </div>
                     </form>
                 </div>
@@ -227,16 +227,17 @@
                     <form action="" method="post">
                         <div class="modal-body">                            
                             <div class="form-group">
-                                <label for="category_name">Nome da Categoria:</label>
-                                <input type="text" name="category_name" id="category_name" class="form-control" placeholder="Nome da Categoria" aria-describedby="error_category_name">
-                                <small id="error_category_name" class="text-danger" style="float: right"></small>
+                                <label for="category_name_update">Nome da Categoria:</label>
+                                <input type="text" name="category_name_update" id="category_name_update" class="form-control" placeholder="Nome da Categoria" aria-describedby="error_category_name">
+                                <small id="error_category_name_update" class="text-danger" style="float: right"></small>
                             </div>                            
                         </div>
                         <input type="hidden" name="category_action" value="update">
+                        <input type="hidden" name="category_id" id="category_id" value="">
                         <input type="hidden" name="restaurant_id" value="<?=$_SESSION['restaurant']?>">
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                            <button type="submit" class="btn btn-success">Salvar</button>
+                            <button id="btn-update-category" type="button" class="btn btn-success">Salvar</button>
                         </div>
                     </form>
                 </div>
@@ -275,5 +276,18 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         <script>$(function () {$('[data-tooltip="tooltip"]').tooltip()})</script>
         <script src="<?=URL?>/public/js/to-top.js"></script>
+        <script src="<?=URL?>/public/js/valida-categoria.js"></script>
+
+        <script>
+            $('#updateCategory').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget) 
+                var category_name = button.data('category-name') 
+                var category_id = button.data('category-id') 
+                
+                var modal = $(this)
+                modal.find('#category_name_update').val(category_name)
+                modal.find('#category_id').val(category_id)
+            })
+        </script>
     </body>
 </html>

@@ -41,9 +41,18 @@ class Categories
         }
     }
 
-    public function Update($values, $id)
+    public function Update($new_name, $id)
     {
-        
+
+        $sql = "UPDATE `categories` SET `category_name` = '$new_name' WHERE `id` = $id";
+
+        $result = mysqli_query($this->db, $sql) or die($this->bd->error);
+
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function Delete($id)
