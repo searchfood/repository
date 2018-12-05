@@ -48,7 +48,7 @@ class RestaurantsController
     public function Update($data)
     {
         if ($this->model->Update($data, $_POST, NULL)){
-            echo 'Ok';
+            // echo 'Ok';
         } else {
             echo 'Erro';
         }

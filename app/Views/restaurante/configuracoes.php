@@ -180,7 +180,7 @@
                                 <i class="fas fa-user-tie"></i>
                                 Dados do Proprietário
                                 <span style="float: right">
-                                    <a style="text-decoretion: none;cursor: pointer" tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="top" title="Informativo" data-content="Os dados do Proprietário são apenas para contato. Nenhuma das suas informações ficará visivel para os clientes.">
+                                    <a style="text-decoretion: none;cursor: help" tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="top" title="Informativo" data-content="Os dados do Proprietário são apenas para contato. Nenhuma das suas informações ficará visivel para os clientes.">
                                         <i class="fas fa-info-circle text-info"></i>
                                     </a>                                    
                                 </span>                    
@@ -305,7 +305,7 @@
         </script>        
 
         <!--Mask JS-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
         <script src="<?=URL?>/public/js/mask.js"></script>
 
