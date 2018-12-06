@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
     <head>
         <title>404. Página não encontrada!</title>
         <!-- Required meta tags -->

@@ -15,9 +15,14 @@ class Categories
     }
 
     public function Insert($values)
-    {
-        $sql =  "INSERT INTO `categories` (`id`, `restaurant_id`, `category_name`)" .
-                "VALUES (NULL, '" . $values['restaurant_id'] . "', '" . $values['category_name'] . "')";
+    {        
+        $count = 'SELECT MAX(id) AS num_order FROM categories';
+        $max = mysqli_query($this->db, $count);
+        $row = $max->fetch_assoc();
+        $order = $row['num_order'] + 1;
+
+        $sql =  "INSERT INTO `categories` (`id`, `restaurant_id`, `category_name`, `ordination`)" .
+                "VALUES (NULL, '" . $values['restaurant_id'] . "', '" . $values['category_name'] . "', '$order')";
         
         $stmt = $this->db->prepare($sql);
         $result = $stmt->execute();
@@ -30,7 +35,7 @@ class Categories
 
     public function Select($id)
     {
-        $sql = "SELECT * FROM `categories` WHERE restaurant_id = '$id' ORDER BY id DESC";
+        $sql = "SELECT * FROM `categories` WHERE restaurant_id = '$id' ORDER BY ordination DESC";
 
         $result = mysqli_query($this->db, $sql);
 

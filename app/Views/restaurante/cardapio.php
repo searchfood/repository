@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
         <title>Cardápio</title>
         <!-- Required meta tags -->
@@ -27,7 +27,7 @@
 
         <?php include 'app/Views/templates/dashboard.php'?>
 
-        <div class="container mt-5 mb-5">            
+        <div class="container mt-5 mb-5">           
             <div class="row">
                 <div class="col-4">
                     <div class="card">
@@ -46,6 +46,7 @@
                                     <?php $row_category = mysqli_fetch_assoc($categories); ?>
                                     <?php if($i == 0) {?>
                                         <a class="list-group-item list-group-item-action active" id="list-category<?= $row_category['id'] ?>-list" data-toggle="list" href="#list-category<?= $row_category['id'] ?>" role="tab" aria-controls="category<?= $row_category['id'] ?>">
+                                            <i style="-writing-mode:tb-rl;-webkit-transform:rotate(270deg); //tente 90 no lugar de 270-moz-transform:rotate(270deg);-o-transform: rotate(270deg);" class="exchange fas"></i>
                                             <?= $row_category['category_name'] ?>
                                             <?php $num_itens = $menu->Select($row_category['id']) ?>
                                             <?php if ($num_itens == 1) { ?>
@@ -64,6 +65,7 @@
                                         </a>
                                     <?php } else { ?>
                                         <a class="list-group-item list-group-item-action"id="list-category<?= $row_category['id'] ?>-list" data-toggle="list" href="#list-category<?= $row_category['id'] ?>" role="tab" aria-controls="category<?= $row_category['id'] ?>">
+                                            <i style="-writing-mode:tb-rl;-webkit-transform:rotate(270deg); //tente 90 no lugar de 270-moz-transform:rotate(270deg);-o-transform: rotate(270deg);" class="exchange fas"></i>
                                             <?= $row_category['category_name'] ?>
                                             <?php $num_itens = $menu->Select($row_category['id']) ?>
                                             <?php if ($num_itens == 1) { ?>
@@ -254,9 +256,26 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="" method="post">
-                        <div class="modal-body">                            
-                                                        
+                    <form enctype="multipart/form-data" action="" method="post">
+                        <div class="modal-body p-0">                            
+                            <nav>
+                                <div class="nav nav-tabs text-center" id="nav-tab" role="tablist">
+                                    <a class="col h5 nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">
+                                        Informações do Item
+                                    </a>
+                                    <a class="col h5 nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">
+                                        Variações
+                                    </a>                                    
+                                </div>
+                            </nav>
+                            <div class="tab-content" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                
+                                </div>
+                                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                
+                                </div>                                
+                            </div>          
                         </div>
                         <input type="hidden" name="menu_action" value="insert">
                         <input type="hidden" name="restaurant_id" value="<?=$_SESSION['restaurant']?>">
@@ -274,6 +293,7 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <script>$(function () {$('[data-tooltip="tooltip"]').tooltip()})</script>
         <script src="<?=URL?>/public/js/to-top.js"></script>
         <script src="<?=URL?>/public/js/valida-categoria.js"></script>
@@ -287,6 +307,13 @@
                 var modal = $(this)
                 modal.find('#category_name_update').val(category_name)
                 modal.find('#category_id').val(category_id)
+            })
+
+            $(document).ready(function () {
+                $('#list-tab').soetable( update: function () {
+                    var current_order = $(this).sortable('serealize');
+                    alert(current_order);
+                })
             })
         </script>
     </body>

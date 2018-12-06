@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
         <title>Configurações</title>
         <!-- Required meta tags -->

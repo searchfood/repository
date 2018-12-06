@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
         <title>Dashboard | Search Food</title>
         <!-- Required meta tags -->
