@@ -140,7 +140,7 @@
         </li>        
         <li class="nav-item py-1">
             <a class="nav-link" href="<?=URL?>/restaurante/extensoes">
-                <i class="fas fa-sitemap"></i>
+                <i class="fas fa-puzzle-piece"></i>
                 Extensões
             </a>
         </li>

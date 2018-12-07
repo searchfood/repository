@@ -260,20 +260,62 @@
                         <div class="modal-body p-0">                            
                             <nav>
                                 <div class="nav nav-tabs text-center" id="nav-tab" role="tablist">
-                                    <a class="col h5 nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">
+                                    <a class="col h5 nav-item nav-link active" id="nav-item-tab" data-toggle="tab" href="#nav-item" role="tab" aria-controls="nav-item" aria-selected="true">
                                         Informações do Item
                                     </a>
-                                    <a class="col h5 nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">
+                                    <a class="col h5 nav-item nav-link" id="nav-variacao-tab" data-toggle="tab" href="#nav-variacao" role="tab" aria-controls="nav-profile" aria-selected="false">
                                         Variações
                                     </a>                                    
                                 </div>
                             </nav>
                             <div class="tab-content" id="nav-tabContent">
-                                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                                
+                                <div class="tab-pane fade show active" id="nav-item" role="tabpanel" aria-labelledby="nav-item-tab">
+                                    <form action="" method="post">
+                                        <div class="row p-5">
+                                            <div class="col-5">
+                                                <div class="form-group">
+                                                    <label>Foto/Logo: <small>(Opicional)</small></label>                                                    
+                                                    <img class="img-fluid" id='img-upload' src=""/>                                                                                                      
+                                                    <div class="input-group">
+                                                        <span class="btn btn-default btn-file btn-block">
+                                                            <button class="btn btn-primary">
+                                                                <i style="font-size: 20px" class="fas fa-cloud-upload-alt"></i>
+                                                                Escolha um Arquivo
+                                                                <input type="file" id="imgInp" name="product_photo">
+                                                            </button>
+                                                            <!-- <small class="form-text text-muted text-center">Recomendação Minima (100 X 100)</small> -->
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <label for="product_name">Nome do Item:</label>
+                                                    <input type="text" name="product_name" id="product_name" class="form-control" placeholder="Nome do Item" aria-describedby="error_procuct_name">
+                                                    <small id="error_procuct_name" class="text-danger"></small>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label for="product_price">Preço:</label>
+                                                            <input type="text" name="product_price" id="product_price" class="form-control text-right" placeholder="0,00" aria-describedby="error_procuct_price">
+                                                            <small id="error_procuct_price" class="text-danger"></small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label for="promotional_price">Preço Promocional:</label>
+                                                            <input type="text" name="promotional_price" id="promotional_price" class="form-control text-right" placeholder="0,00" aria-describedby="error_promotional_price">
+                                                            <small id="error_promotional_price" class="text-danger"></small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
-                                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                                
+                                <div class="tab-pane fade" id="nav-variacao" role="tabpanel" aria-labelledby="nav-variacao-tab">
+                                    
                                 </div>                                
                             </div>          
                         </div>
@@ -293,12 +335,13 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> -->
         <script>$(function () {$('[data-tooltip="tooltip"]').tooltip()})</script>
         <script src="<?=URL?>/public/js/to-top.js"></script>
         <script src="<?=URL?>/public/js/valida-categoria.js"></script>
 
         <script>
+            $(document).ready(function(){function i(i){if(i.files&&i.files[0]){var t=new FileReader;t.onload=function(i){$("#img-upload").attr("src",i.target.result)},t.readAsDataURL(i.files[0])}}$(document).on("change",".btn-file :file",function(){var i=$(this),t=i.val().replace(/\\/g,"/").replace(/.*\//,"");i.trigger("fileselect",[t])}),$(".btn-file :file").on("fileselect",function(i,t){var o=$(this).parents(".input-group").find(":text"),e=t;o.length&&o.val(e)}),$("#imgInp").change(function(){i(this)})});
             $('#updateCategory').on('show.bs.modal', function (event) {
                 var button = $(event.relatedTarget) 
                 var category_name = button.data('category-name') 
@@ -309,12 +352,12 @@
                 modal.find('#category_id').val(category_id)
             })
 
-            $(document).ready(function () {
-                $('#list-tab').soetable( update: function () {
-                    var current_order = $(this).sortable('serealize');
-                    alert(current_order);
-                })
-            })
+            // $(document).ready(function () {
+            //     $('#list-tab').soetable( update: function () {
+            //         var current_order = $(this).sortable('serealize');
+            //         alert(current_order);
+            //     })
+            // })
         </script>
     </body>
 </html>
