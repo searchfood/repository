@@ -115,7 +115,7 @@
         </li>
         <li class="nav-item py-1">
             <a class="nav-link" href="<?=URL?>/restaurante/pedidos">
-                <i class="fas fa-shopping-basket"></i>
+                <i class="fas fa-concierge-bell"></i>
                 Pedidos
             </a>
         </li>

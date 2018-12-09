@@ -22,7 +22,12 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     </head>
-    <style>.card {-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.10);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.10);box-shadow: 0 1px 2px rgba(0,0,0,.10);border: 1px solid rgba(0,0,0,.2);border-radius: 0;color: black;}.card-header{font-size: 22px;border-bottom: 2px solid #d20911;}#category_menu{border-bottom: none}.card-footer{border-top: 2px solid #d20911;}.form-control, .btn {border-radius: 2rem;}.list-group .active {background-color: #fff;color: black;border: 1px solid #FF0000;border-left: 5px solid #FF0000;border-radius: 0}</style>
+    <style>.card {-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.10);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.10);box-shadow: 0 1px 2px rgba(0,0,0,.10);border: 1px solid rgba(0,0,0,.2);border-radius: 0;color: black;}.card-header{font-size: 22px;border-bottom: 2px solid #d20911;}#category_menu{border-bottom: none}.card-footer{border-top: 2px solid #d20911;}.form-control, .btn {border-radius: 2rem;}.list-group .active {background-color: #fff;color: black;border: 1px solid #FF0000;border-left: 5px solid #FF0000;border-radius: 0}    
+    #nav-tab .active {
+        color: #d20911;
+        /* border: solid #d20911; */
+    }
+    </style>
     <body style="font-family: 'Niramit', sans-serif;background-color: #f1f2f7;">
 
         <?php include 'app/Views/templates/dashboard.php'?>
@@ -109,7 +114,7 @@
                                             <div class="card-header">
                                                 <i class="fas fa-tag"></i>
                                                 <?= $row_category['category_name'] ?>
-                                                <button type="button" data-toggle="modal" data-target="#addMenu" class="btn btn-success btn-sm" style="float: right" data-tooltip="tooltip" data-placement="top" title="Adicionar Novo Item">
+                                                <button data-id="<?=$row_category['id']?>" data-name="<?=$row_category['category_name']?>" type="button" data-toggle="modal" data-target="#addMenu" class="btn btn-success btn-sm" style="float: right" data-tooltip="tooltip" data-placement="top" title="Adicionar Novo Item">
                                                     <i class="fas fa-plus"></i>
                                                     Adicionar Novo Item
                                                 </button>
@@ -147,7 +152,7 @@
                                             <div class="card-header">
                                                 <i class="fas fa-tag"></i>
                                                 <?= $row_category['category_name'] ?>
-                                                <button type="button" data-toggle="modal" data-target="#addMenu" class="btn btn-success btn-sm" style="float: right" data-tooltip="tooltip" data-placement="top" title="Adicionar Novo Item">
+                                                <button data-id="<?=$row_category['id']?>" data-name="<?=$row_category['category_name']?>" type="button" data-toggle="modal" data-target="#addMenu" class="btn btn-success btn-sm" style="float: right" data-tooltip="tooltip" data-placement="top" title="Adicionar Novo Item">
                                                     <i class="fas fa-plus"></i>
                                                     Adicionar Novo Item
                                                 </button>
@@ -250,12 +255,6 @@
         <div class="modal fade" id="addMenu" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content">
-                    <div class="modal-header" style="border-bottom: 2px solid #d20911">
-                        <h5 class="modal-title">Adicionar Novo Item</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
                     <form enctype="multipart/form-data" action="" method="post">
                         <div class="modal-body p-0">                            
                             <nav>
@@ -269,50 +268,74 @@
                                 </div>
                             </nav>
                             <div class="tab-content" id="nav-tabContent">
-                                <div class="tab-pane fade show active" id="nav-item" role="tabpanel" aria-labelledby="nav-item-tab">
-                                    <form action="" method="post">
-                                        <div class="row p-5">
-                                            <div class="col-5">
-                                                <div class="form-group">
-                                                    <label>Foto/Logo: <small>(Opicional)</small></label>                                                    
-                                                    <img class="img-fluid" id='img-upload' src=""/>                                                                                                      
-                                                    <div class="input-group">
-                                                        <span class="btn btn-default btn-file btn-block">
-                                                            <button class="btn btn-primary">
-                                                                <i style="font-size: 20px" class="fas fa-cloud-upload-alt"></i>
-                                                                Escolha um Arquivo
-                                                                <input type="file" id="imgInp" name="product_photo">
-                                                            </button>
-                                                            <!-- <small class="form-text text-muted text-center">Recomendação Minima (100 X 100)</small> -->
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label for="product_name">Nome do Item:</label>
-                                                    <input type="text" name="product_name" id="product_name" class="form-control" placeholder="Nome do Item" aria-describedby="error_procuct_name">
-                                                    <small id="error_procuct_name" class="text-danger"></small>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <div class="form-group">
-                                                            <label for="product_price">Preço:</label>
-                                                            <input type="text" name="product_price" id="product_price" class="form-control text-right" placeholder="0,00" aria-describedby="error_procuct_price">
-                                                            <small id="error_procuct_price" class="text-danger"></small>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="form-group">
-                                                            <label for="promotional_price">Preço Promocional:</label>
-                                                            <input type="text" name="promotional_price" id="promotional_price" class="form-control text-right" placeholder="0,00" aria-describedby="error_promotional_price">
-                                                            <small id="error_promotional_price" class="text-danger"></small>
-                                                        </div>
-                                                    </div>
+                                <div class="tab-pane fade show active" id="nav-item" role="tabpanel" aria-labelledby="nav-item-tab">                                    
+                                    <div class="row px-4 pt-2">
+                                        <div class="col-5">
+                                            <div class="form-group">
+                                                <label>Foto/Logo: <small>(Opicional)</small></label>                                                    
+                                                <img class="img-fluid" id='img-upload'/>                                                                                                      
+                                                <div class="input-group">
+                                                    <span class="btn btn-default btn-file btn-block">
+                                                        <button class="btn btn-primary">
+                                                            <i style="font-size: 20px" class="fas fa-cloud-upload-alt"></i>
+                                                            Escolha um Arquivo
+                                                            <input type="file" id="imgInp" name="product_photo">
+                                                        </button>
+                                                        <!-- <small class="form-text text-muted text-center">Recomendação Minima (100 X 100)</small> -->
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
-                                    </form>
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label for="product_name">Nome do Item:</label>
+                                                <input type="text" name="product_name" id="product_name" class="form-control" placeholder="Nome do Item" aria-describedby="error_procuct_name">
+                                                <small id="error_procuct_name" class="text-danger"></small>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="product_price">Preço:</label>
+                                                        <input type="text" name="product_price" id="product_price" class="form-control text-right" placeholder="0,00" aria-describedby="error_procuct_price">
+                                                        <small id="error_procuct_price" class="text-danger"></small>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="promotional_price">Preço Promocional:</label>
+                                                        <input type="text" name="promotional_price" id="promotional_price" class="form-control text-right" placeholder="0,00" aria-describedby="error_promotional_price">
+                                                        <small id="error_promotional_price" class="text-danger"></small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-7">
+                                                    <div class="form-group">
+                                                        <label for="category_name">Categoria:</label>
+                                                        <input value="" readonly type="text" name="category_name" id="category_name" class="form-control">
+                                                    </div>
+                                                    <input type="hidden" name="category_id" id="category_id">
+                                                </div>
+                                                <div class="col">                                                                                                        
+                                                    <div class="form-group">
+                                                        <label for="product_status">Status:</label>
+                                                        <select data-html="true" class="custom-select form-control" name="product_status" id="product_status">                                                                                                                                
+                                                            <option class="text-success" value="1">                                                                                                                                
+                                                                Disponível
+                                                            </option>
+                                                            <option class="text-danger" value="2">
+                                                                Em Falta
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="product_description">Descrição:</label>
+                                                <textarea class="form-control" name="product_description" id="product_description" rows="6" placeholder=""></textarea>
+                                            </div>
+                                        </div>
+                                    </div>                                    
                                 </div>
                                 <div class="tab-pane fade" id="nav-variacao" role="tabpanel" aria-labelledby="nav-variacao-tab">
                                     
@@ -321,7 +344,7 @@
                         </div>
                         <input type="hidden" name="menu_action" value="insert">
                         <input type="hidden" name="restaurant_id" value="<?=$_SESSION['restaurant']?>">
-                        <div class="modal-footer">
+                        <div class="modal-footer" style="border-top: 2px solid #d20911">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                             <button type="submit" class="btn btn-success">Salvar</button>
                         </div>
@@ -349,6 +372,16 @@
                 
                 var modal = $(this)
                 modal.find('#category_name_update').val(category_name)
+                modal.find('#category_id').val(category_id)
+            })
+
+            $('#addMenu').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget) 
+                var category_name = button.data('name') 
+                var category_id = button.data('id') 
+                
+                var modal = $(this)
+                modal.find('#category_name').val(category_name)
                 modal.find('#category_id').val(category_id)
             })
 

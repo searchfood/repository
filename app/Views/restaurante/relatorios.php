@@ -76,7 +76,9 @@
                     <i class="fas fa-chart-line"></i>
                     Relatório Geral de Vendas
                 </div>
-                <div class="card-body"></div>
+                <div class="card-body">
+                    <canvas style="" id="myChart"></canvas>
+                </div>
                 <div class="card-footer text-right">
                     <button class="btn btn-info" type="button">
                         Exportar Relatório
@@ -91,7 +93,9 @@
                         <div class="card-header">
                             <i class="fas fa-chart-bar"></i>
                         </div>
-                        <div class="card-body"></div>
+                        <div class="card-body">
+                            <!-- <canvas style="" id="myChart"></canvas> -->
+                        </div>
                         <div class="card-footer text-right">
                             <button class="btn btn-info" type="button">
                                 Exportar Relatório
@@ -123,5 +127,29 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         <script src="<?=URL?>/public/js/to-top.js"></script>
+        
+        <!-- Charts JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+        <script>
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var chart = new Chart(ctx, {
+                // The type of chart we want to create
+                type: 'line',
+
+                // The data for our dataset
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: "My First dataset",
+                        backgroundColor: 'transparent',
+                        borderColor: 'rgb(255, 99, 132)',
+                        data: [],
+                    }]
+                },
+
+                // Configuration options go here
+                options: {}
+            });
+        </script>
     </body>
 </html>

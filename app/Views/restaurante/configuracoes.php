@@ -57,6 +57,10 @@
                                     <i class="far fa-credit-card"></i>
                                     Formas de Pagamento
                                 </a>
+                                <a class="list-group-item list-group-item-action scroll text-truncate" href="#delivery_area">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                    Área de Entrega
+                                </a>
                                 <a class="list-group-item list-group-item-action scroll text-truncate" href="#contributors">
                                     <img width="20" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAL/SURBVGhD7Zo9iBNBFMdz5xcW4ic2Nn6kCiZhc0kMUQiHNiKWsbRSRDgtvEKwuE4sBCshXmeh4AdaiGJhZSEiCOKBJ4iFIiLeITZ34IF3+pv1JeQm426STWait3/4scnMe2/eP7uB2U0SsUKUy+VG4dnIyMgCx1mOk6VSaYtM/xui8SPwk+Z/NcPYq1QqtVbCBl5DNPxeGp/gLKzP5/O7ef9SxsYlbrCVzWZ3yhn4DNtghuZrnucdlfHHEupO1Wp1VTqd3hwEje5XDdP8FKY28XoaLsIBNQ7PTXnNlMvlDbJkb1UoFLbSwC2am5dmQlFGJN0XY3UjbUH+Jzgh6b0Rhe/oC4UR1YiwxCV5UEpEU6VSWU3BH9oC7fCm+XLhC3/YEBMKH0hNWokmim3Ui9sEIzellWiiWGykF8RGdFEsNkITar/1FRaaxzvBtZE5OKX2WVJmmPdjNPWxKaYtXBsZk/RlUtt45tQezJRjxKmRTCazXdJbxPxVPT4Ip0bU5lLSW8T8ZT0+CKdGWHyPpLeI+et6fBCujYxKeouYmzLl/A2nRtQmUdJbxPxtPT4I12fktKQvkzLI/Ds9PginRuB7MplcJyUaoqmzhthAXBtRDVyQEr7UbS9jb02xQTg3Ak+lhC/ed3OHOBBn5K6U8MUd4l7Gl/S4MFwaWYQHXEo7pERDNHUSvmjxgbgwMseiVzzPS0qqUcStIe4YvNDyjdg2Ml0sFndJSrsaIu+8VqcFq0Y4C3kJ71g0+tBUs441Iyw0zxf5ULeQXzPVrWP1jPST2Iguiq0oI69Z8EmXfDPUa8C8tS/7bNAdYZioUdVrNmPTiHrkcwZUQ91wH4y1FdaM9BurRlhMbTfUbyidcg/UAzxjXYVNIzOEDf+J7lzkq8vLVNfHppFFFhvnqF/7oZCnNo+PeG2q62PTSF+Jjeii2P9hRP3mbVrAIjekleiiWEdP0HsJZ2RC2oguCh4HdS9uXKyPfOj5P4r4ZPbBJYpP9hvWucbxnHoWJsuvFCUSvwEX+K25n66sTQAAAABJRU5ErkJggg==">
                                     Funcionários
@@ -237,7 +241,35 @@
                                 Dados de Acesso
                             </div>
                             <div class="card-body">
-                                
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="card">
+                                            <div class="card-body p-0">
+                                                <h5 class="p-3 mb-0">Alterar Email</h5>
+                                                <hr class="m-0">
+                                                <form class="p-3" action="" method="post">
+                                                    <span><strong>Email Atual:</strong> <?=$restaurant->Select('email')?></span>
+                                                    <div class="form-group mt-3">
+                                                        <label for="new_email">Novo Email:</label>
+                                                        <input type="email" name="new_email" id="new_email" class="form-control" placeholder="Novo Email" aria-describedby="error_new_email">
+                                                        <small id="error_new_email" class="text-danger"></small>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card">
+                                            <div class="card-body p-0">
+                                                <h5 class="p-3 mb-0">Alterar Senha</h5>
+                                                <hr class="m-0">
+                                                <form class="p-3" action="" method="post">
+                                                
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="card-footer text-right">
                             
@@ -261,6 +293,19 @@
                             <div class="card-header py-2">
                                 <i class="far fa-credit-card"></i>
                                 Formas de Pagamento
+                            </div>
+                            <div class="card-body">
+                            
+                            </div>
+                            <div class="card-footer text-right">
+                            
+                            </div>
+                        </div>
+                        <div id="delivery_area"></div>
+                        <div style="top: 13px" class="card mb-5">
+                            <div class="card-header py-2">
+                                <i class="fas fa-map-marked-alt"></i>
+                                Área de Entrega
                             </div>
                             <div class="card-body">
                             

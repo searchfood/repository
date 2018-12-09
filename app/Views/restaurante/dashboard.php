@@ -37,7 +37,7 @@
                             <h4 class="text-center my-2">R$ 0,00</h4>
                         </div>
                         <div class="card-footer text-center border-success">
-                            Meus Ganhos
+                            Faturamento
                         </div>
                     </div>
                 </div>                

@@ -32,7 +32,7 @@
                 <div class="col-5 pr-0">
                     <div class="card">
                         <div class="card-header">
-                            <i class="fas fa-shopping-basket"></i>
+                            <i class="fas fa-concierge-bell"></i>
                             Pedidos em Aberto   
                             <h1 style="float: right;font-size: 20px;margin-bottom: 0" class="badge badge-success badge-pill">0</h1>                         
                         </div>
