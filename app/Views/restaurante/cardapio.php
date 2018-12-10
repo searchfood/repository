@@ -22,13 +22,20 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     </head>
-    <style>.card {-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.10);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.10);box-shadow: 0 1px 2px rgba(0,0,0,.10);border: 1px solid rgba(0,0,0,.2);border-radius: 0;color: black;}.card-header{font-size: 22px;border-bottom: 2px solid #d20911;}#category_menu{border-bottom: none}.card-footer{border-top: 2px solid #d20911;}.form-control, .btn {border-radius: 2rem;}.list-group .active {background-color: #fff;color: black;border: 1px solid #FF0000;border-left: 5px solid #FF0000;border-radius: 0}    
-    #nav-tab .active {
-        color: #d20911;
-        /* border: solid #d20911; */
-    }
+    <style>.card {-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.10);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.10);box-shadow: 0 1px 2px rgba(0,0,0,.10);border: 1px solid rgba(0,0,0,.2);border-radius: 0;color: black;}.card-header{font-size: 22px;border-bottom: 2px solid #d20911;}#category_menu{border-bottom: none}.card-footer{border-top: 2px solid #d20911;}.form-control, .btn {border-radius: 2rem;}.list-group .active {background-color: #fff;color: black;border: 1px solid #FF0000;border-left: 5px solid #FF0000;border-radius: 0}            
+        #nav-tab .nav-link {
+            color: #000;
+            border-bottom: 2px solid #d20911;
+            background-color: #e6dcdc;
+        }
+        #nav-tab .active {
+            color: #d20911;
+            border: 2px solid #d20911;
+            border-bottom: transparent;
+            background-color: #fff;
+        }
     </style>
-    <body style="font-family: 'Niramit', sans-serif;background-color: #f1f2f7;">
+    <body style="font-family: 'Niramit', sans-serif;background-color: #ecedf1;">
 
         <?php include 'app/Views/templates/dashboard.php'?>
 

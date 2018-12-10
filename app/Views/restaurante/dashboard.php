@@ -23,7 +23,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     </head>
     <style>.card {-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.10);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.10);box-shadow: 0 1px 2px rgba(0,0,0,.10);border: 1px solid rgba(0,0,0,.2);border-radius: 0;color: black;}.card-header{font-size: 20px;}.col-md-3 .card .card-footer{background-color: #fff;border-top: 2px solid;font-size: 18px}</style>    
-    <body style="font-family: 'Niramit', sans-serif;background-color: #f1f2f7;">
+    <body style="font-family: 'Niramit', sans-serif;background-color: #ecedf1;">
 
         <?php include 'app/Views/templates/dashboard.php'?>
 

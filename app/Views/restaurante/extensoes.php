@@ -22,16 +22,12 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     </head>
-    <body style="font-family: 'Niramit', sans-serif;background-color: #f1f2f7;">
+    <body style="font-family: 'Niramit', sans-serif;background-color: #ecedf1;">
 
         <?php include 'app/Views/templates/dashboard.php'?>
 
         <div class="container mt-5 mb-5">
-            <div class="card">
-                <div class="card-body">
-                    
-                </div>
-            </div>
+            
         </div>
         
         <!-- Optional JavaScript -->
