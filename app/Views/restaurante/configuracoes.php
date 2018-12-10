@@ -240,34 +240,25 @@
                                 <i class="fas fa-key"></i>
                                 Dados de Acesso
                             </div>
-                            <div class="card-body">
+                            <div class="card-body p-0">
                                 <div class="row">
-                                    <div class="col">
-                                        <div class="card">
-                                            <div class="card-body p-0">
-                                                <h5 class="p-3 mb-0">Alterar Email</h5>
-                                                <hr class="m-0">
-                                                <form class="p-3" action="" method="post">
-                                                    <span><strong>Email Atual:</strong> <?=$restaurant->Select('email')?></span>
-                                                    <div class="form-group mt-3">
-                                                        <label for="new_email">Novo Email:</label>
-                                                        <input type="email" name="new_email" id="new_email" class="form-control" placeholder="Novo Email" aria-describedby="error_new_email">
-                                                        <small id="error_new_email" class="text-danger"></small>
-                                                    </div>
-                                                </form>
-                                            </div>
+                                    <div class="col p-5">
+                                        <span><strong>Email Atual:</strong> <?=$restaurant->Select('email')?></span>
+                                        <div class="form-group mt-4">
+                                            <label for="new_email">Novo Email:</label>
+                                            <input type="email" name="new_email" id="new_email" class="form-control" placeholder="Digite o Novo Email" aria-describedby="">
+                                            <small id="" class="text-danger"></small>
                                         </div>
+                                        <div class="form-group">
+                                            <label for="password">Senha Atual:</label>
+                                            <input type="password" name="password" id="password" class="form-control" placeholder="Digite a Senha Atual" aria-describedby="">
+                                            <small id="" class="text-danger"></small>
+                                        </div>
+                                        <button type="submit" class="btn btn-block btn-success">Alterar Email</button>
                                     </div>
-                                    <div class="col">
-                                        <div class="card">
-                                            <div class="card-body p-0">
-                                                <h5 class="p-3 mb-0">Alterar Senha</h5>
-                                                <hr class="m-0">
-                                                <form class="p-3" action="" method="post">
-                                                
-                                                </form>
-                                            </div>
-                                        </div>
+                                    <div class="border"></div>
+                                    <div class="col p-5">
+                                        Oi
                                     </div>
                                 </div>
                             </div>

@@ -345,7 +345,14 @@
                                     </div>                                    
                                 </div>
                                 <div class="tab-pane fade" id="nav-variacao" role="tabpanel" aria-labelledby="nav-variacao-tab">
-                                    
+                                    <div class="form-group mb-3 mt-1 p-4">
+                                        <label for="variation_name">Nome da Variação:</label>
+                                        <div class="row pl-3">                                        
+                                            <input type="text" name="variation_name" id="variation_name" class="form-control col-8" placeholder="Nome da Variação">
+                                            <button type="button" class="btn btn-primary col-3 ml-5">Adicionar</button>
+                                        </div>
+                                        <small class="text-danger mb-0 pb-0" id="error_variation_name"></small>
+                                    </div> 
                                 </div>                                
                             </div>          
                         </div>
